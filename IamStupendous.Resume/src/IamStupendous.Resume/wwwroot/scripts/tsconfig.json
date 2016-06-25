@@ -1,0 +1,21 @@
+﻿{
+    "version": "1.6.0",
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "system",
+        "noEmitOnError": true,
+        "noImplicitAny": false,
+        "removeComments": false,
+        "sourceMap": true,
+        "target": "es6",
+        "moduleResolution": "node",
+        "outDir": "../scripts/app/"
+    },
+    "exclude": [
+        "node_modules",
+        "typings/main",
+        "typings/main.d.ts"
+    ]
+    //,"files": [ "typings/globals/chart.js/index.d.ts" ]
+}
