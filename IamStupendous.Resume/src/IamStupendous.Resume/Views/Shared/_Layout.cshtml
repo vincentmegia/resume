@@ -14,16 +14,16 @@
         <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css"/>
         
         <!-- TODO: Move package dependency managemtn to systemjs -->
-        <script src="~/libraries/jquery/dist/jquery.js"></script>
-        <script src="~/libraries/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/libraries/es6-shim/es6-shim.min.js"></script>
+        @*<script src="~/libraries/es6-shim/es6-shim.min.js"></script>*@
+        @*<script src="~/scripts/shims_for_IE.js"></script>*@
+        
+        <script src="~/libraries/core-js/client/shim.min.js"></script>
         <script src="~/libraries/zone.js/dist/zone.js"></script>
         <script src="~/libraries/reflect-metadata/Reflect.js"></script>
         <script src="~/libraries/systemjs/dist/system.js"></script>
-        <script src="~/libraries/chart.js/dist/Chart.js"></script>
-        <script src="~/scripts/smoothscroll.js"></script>
-        
-        
+        <script src="~/libraries/typescript/lib/typescript.js"></script>
+        <script src="~/libraries/chart.js/dist/Chart.js"></script><!-- some weird reason, this cannot be loaded in systemjs which irritates me-->
+
         <!-- 2. Configure SystemJS -->
         <script src="~/scripts/systemjs.config.js"></script>
         <script src="~/scripts/main.js"></script>
@@ -44,7 +44,6 @@
         <script src="~/js/angular2/router.dev.min.js"></script>
     </environment>
 </head>
-<base href="/" />
 <body>
     <div>
         @RenderBody()

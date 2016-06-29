@@ -10,17 +10,19 @@ System.register(['@angular/core', './education'], function(exports_1, context_1)
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, education_1;
+    var core_1, education_1, core_2;
     var EducationComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+                core_2 = core_1_1;
             },
             function (education_1_1) {
                 education_1 = education_1_1;
             }],
         execute: function() {
+            core_2.enableProdMode();
             let EducationComponent = class EducationComponent {
                 constructor() {
                     this.educations = [];

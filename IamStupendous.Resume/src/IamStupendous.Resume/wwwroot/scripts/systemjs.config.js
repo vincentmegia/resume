@@ -6,42 +6,56 @@
         'rxjs': 'libraries/rxjs',
         'angular2-in-memory-web-api': 'libraries/angular2-in-memory-web-api',
         '@angular': 'libraries/@angular',
-        'chartjs': 'libraries/chart.js/dist',//TODO: later
-        'ng2-charts': 'libraries/ng2-charts',
+        'jquery': 'libraries/jquery',
+        'bootstrap': 'libraries/bootstrap',
         'moment': 'libraries/moment/moment.js',
-        'ng2-bootstrap': 'libraries/ng2-bootstrap'
+        'ng2-bootstrap': 'libraries/ng2-bootstrap',
+        'ng2-charts': 'libraries/ng2-charts',
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
-        'app': { main: 'boot.js', defaultExtension: 'js' },
+        'app': { main: 'boot.ts', defaultExtension: 'ts' },
         'rxjs': { defaultExtension: 'js' },
         'angular2-in-memory-web-api': { defaultExtension: 'js' },
+        'bootstrap': { defaultExtension: 'js' },
         'ng2-charts': { defaultExtension: 'js' },
-        //'moment': { defaultExtension: 'js' },
-        'ng2-bootstrap': { defaultExtension: 'js' }
-        //'chartjs': { defaultExtension: 'js' }//TODO: later
+        'moment': { defaultExtension: 'js' },
+        'ng2-bootstrap': { defaultExtension: 'js' },
     };
 
-    var packageNames = [
-      '@angular/common',
-      '@angular/compiler',
-      '@angular/core',
-      '@angular/http',
-      '@angular/platform-browser',
-      '@angular/platform-browser-dynamic',
-      '@angular/router',
-      '@angular/router-deprecated',
-      '@angular/testing',
-      '@angular/upgrade',
+    var ngPackageNames = [
+      'common',
+      'compiler',
+      'core',
+      'http',
+      'router',
+      'platform-browser',
+      'platform-browser-dynamic',
+      'router-deprecated',
+      'testing',
+      'upgrade',
     ];
 
-    // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
-    packageNames.forEach(function (pkgName) {
-        packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
-    });
+    // Individual files (~300 requests):
+    function packIndex(pkgName) {
+        packages['@angular/' + pkgName] = { main: 'index.js', defaultExtension: 'js' };
+    }
+
+    // Bundled (~40 requests):
+    function packUmd(pkgName) {
+        packages['@angular/' + pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+    }
+    // Most environments should use UMD; some (Karma) need the individual index files
+    var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
+    // Add package entries for angular packages
+    ngPackageNames.forEach(setPackageConfig);
 
     var config = {
+        transpiler: 'typescript',
+        typescriptOptions: {
+            emitDecoratorMetadata: true
+        },
         map: map,
         packages: packages
     }

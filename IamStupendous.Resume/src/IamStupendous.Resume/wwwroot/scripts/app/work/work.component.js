@@ -1,4 +1,4 @@
-System.register(['@angular/core', './work', './project', "./role", 'ng2-bootstrap/ng2-bootstrap'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/common', './work', './project', "./role", 'ng2-bootstrap/ng2-bootstrap'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,16 @@ System.register(['@angular/core', './work', './project', "./role", 'ng2-bootstra
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, work_1, project_1, role_1, ng2_bootstrap_1;
+    var core_1, common_1, work_1, project_1, role_1, ng2_bootstrap_1, core_2;
     var WorkComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+                core_2 = core_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
             },
             function (work_1_1) {
                 work_1 = work_1_1;
@@ -30,6 +34,7 @@ System.register(['@angular/core', './work', './project', "./role", 'ng2-bootstra
                 ng2_bootstrap_1 = ng2_bootstrap_1_1;
             }],
         execute: function() {
+            core_2.enableProdMode();
             let WorkComponent = class WorkComponent {
                 constructor() {
                     //carousel variables
@@ -82,13 +87,6 @@ System.register(['@angular/core', './work', './project', "./role", 'ng2-bootstra
                                 "Maintained SIT and UAT environment"
                             ])
                         ], "ASP.NET MVC 2.0, C# (3.5) SQL Server 2005, Unity (IoC), Microsoft Enterprise Libraries, SVN, Crystal Report XI and Business Objects"),
-                        new project_1.Project("QUARTERLY PERFORMANCE MONITORING AND ELECTRONIC DISTRIBUTION ENGINE", "QPM is a system that generates benchmark and performance reports for US based high net worth individuals. It takes data from an external company named AXYS where market data are already computed. EDE is a home brew ex- Lehman solution for email engine.Both projects are in BAU mode.", [
-                            new role_1.Role("SENIOR SOFTWARE ENGINEER", [
-                                "Attended bi-weekly meeting with US project managers for book of work prioritization",
-                                "Maintained legacy system",
-                                "Engaged in level 3 or production support"
-                            ])
-                        ], "ASP.NET 2.0, C# (3.5) SQL Server 2005, Informatica, Unix, Autosys"),
                         new project_1.Project("QUARTERLY PERFORMANCE MONITORING AND ELECTRONIC DISTRIBUTION ENGINE", "QPM is a system that generates benchmark and performance reports for US based high net worth individuals. It takes data from an external company named AXYS where market data are already computed. EDE is a home brew ex- Lehman solution for email engine.Both projects are in BAU mode.", [
                             new role_1.Role("SENIOR SOFTWARE ENGINEER", [
                                 "Attended bi-weekly meeting with US project managers for book of work prioritization",
@@ -233,7 +231,7 @@ System.register(['@angular/core', './work', './project', "./role", 'ng2-bootstra
             WorkComponent = __decorate([
                 core_1.Component({
                     selector: 'app-work',
-                    directives: [ng2_bootstrap_1.CollapseDirective],
+                    directives: [ng2_bootstrap_1.ACCORDION_DIRECTIVES, common_1.CORE_DIRECTIVES, common_1.FORM_DIRECTIVES],
                     templateUrl: './scripts/app/work/work.component.html'
                 }), 
                 __metadata('design:paramtypes', [])

@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass} from '@angular/common';
 import { CHART_DIRECTIVES } from 'ng2-charts/ng2-charts';
 import { Chart } from './chart';
+import { enableProdMode } from '@angular/core';
 
+enableProdMode();
 
 @Component({
     selector: 'app-skill',

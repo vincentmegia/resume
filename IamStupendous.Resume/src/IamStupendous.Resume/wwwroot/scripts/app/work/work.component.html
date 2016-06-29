@@ -1,49 +1,39 @@
-<!--<div [collapse]="isCollapsed" class="card card-block card-header">
-    <div class="well well-lg">Some content</div>
-</div>-->
+<section id="work" name="work"></section>
 <div class="container desc">
     <div class="row">
         <div class="col-lg-2 col-lg-offset-1">
-            <h5>WORK</h5>
+            <h5><i class="fa fa-briefcase"></i> WORK</h5>
         </div>
-        <div class="col-lg-6">
-            <div [collapse]="isCollapsed"
-                 class="card card-block card-header"
-                 *ngFor="let work of workHistory;">
-                <p>
-                    <t>{{work.company}}</t><br />
-                </p>
-                <div *ngFor="let project of work.projects;">
+        <div class="col-lg-9">
+            <accordion>
+                <accordion-group *ngFor="let work of workHistory" [heading]="work.company + ' (' + work.yearStart + '-' + work.yearEnd + ')'">
                     <p>
-                        <t>{{project.title}}</t><br />
+                        <t>PROJECT(S)</t>
                     </p>
-                    <p>
-                        <more>{{project.description}}</more>
-                    </p>
-                    <div *ngFor="let role of project.roles;">
+                    <accordion-group *ngFor="let project of work.projects" [heading]="project.title">
                         <p>
-                            <t>{{role.title}}</t><br />
+                            <more>{{project.description}}</more>
                         </p>
+                        <div *ngFor="let role of project.roles">
+                            <p>
+                                <t>{{role.title}}</t><br />
+                            </p>
+                            <p>
+                                <t>Responsibilities</t><br />
+                            </p>
+                            <ul>
+                                <li *ngFor="let responsibility of role.responsibilities">
+                                    {{responsibility}}
+                                </li>
+                            </ul>
+                        </div>
                         <p>
-                            <t>Responsibilities</t><br />
+                            <t>Technologies</t><br />
+                            <sm>{{project.technologies}}</sm>
                         </p>
-                        <ul>
-                            <li *ngFor="let responsibility of role.responsibilities;">
-                                {{responsibility}}
-                            </li>
-                        </ul>
-                    </div>
-                    <p>
-                        <t>Technologies</t><br />
-                        <sm>{{project.technologies}}</sm>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <p>
-                <sm>{{workHistory[0].yearStart}} - {{workHistory[0].yearEnd}}</sm>
-            </p>
+                    </accordion-group>
+                </accordion-group>
+            </accordion>
         </div>
     </div>
     <br>

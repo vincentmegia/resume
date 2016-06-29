@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Education } from './education';
+import { enableProdMode } from '@angular/core';
+
+enableProdMode();
 
 @Component({
     selector: 'app-education',

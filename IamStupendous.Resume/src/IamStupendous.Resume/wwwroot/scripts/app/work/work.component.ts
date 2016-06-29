@@ -3,11 +3,14 @@ import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import { Work } from './work';
 import { Project } from './project';
 import { Role } from "./role";
-import { CollapseDirective } from 'ng2-bootstrap/ng2-bootstrap';
+import { ACCORDION_DIRECTIVES  } from 'ng2-bootstrap/ng2-bootstrap';
+import { enableProdMode } from '@angular/core';
+
+enableProdMode();
 
 @Component({
     selector: 'app-work',
-    directives: [CollapseDirective],
+    directives: [ACCORDION_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES],
     templateUrl: './scripts/app/work/work.component.html'
 })
 export class WorkComponent {
@@ -88,18 +91,6 @@ export class WorkComponent {
                             ])
                         ],
                         "ASP.NET MVC 2.0, C# (3.5) SQL Server 2005, Unity (IoC), Microsoft Enterprise Libraries, SVN, Crystal Report XI and Business Objects"
-                    ),
-                    new Project("QUARTERLY PERFORMANCE MONITORING AND ELECTRONIC DISTRIBUTION ENGINE",
-                        "QPM is a system that generates benchmark and performance reports for US based high net worth individuals. It takes data from an external company named AXYS where market data are already computed. EDE is a home brew ex- Lehman solution for email engine.Both projects are in BAU mode.",
-                        [
-                            new Role("SENIOR SOFTWARE ENGINEER",
-                            [
-                                "Attended bi-weekly meeting with US project managers for book of work prioritization",
-                                "Maintained legacy system",
-                                "Engaged in level 3 or production support"
-                            ])
-                        ],
-                        "ASP.NET 2.0, C# (3.5) SQL Server 2005, Informatica, Unix, Autosys"
                     ),
                     new Project("QUARTERLY PERFORMANCE MONITORING AND ELECTRONIC DISTRIBUTION ENGINE",
                         "QPM is a system that generates benchmark and performance reports for US based high net worth individuals. It takes data from an external company named AXYS where market data are already computed. EDE is a home brew ex- Lehman solution for email engine.Both projects are in BAU mode.",

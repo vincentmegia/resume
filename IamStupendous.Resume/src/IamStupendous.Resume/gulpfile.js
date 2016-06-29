@@ -28,20 +28,21 @@ gulp.task("clean", function () {
 gulp.task("deploy-javascript-css", function () {
     gulp
         .src([
-                "es6-shim/**/*.js",
-                "systemjs/dist/**/*.js",
-                "reflect-metadata/**/*.js",
-                "rxjs/**/*.js",
-                "zone.js/**/zone.js",
-                "@angular/**/*.js",
-                "jquery/**/*.*js",
-                "bootstrap/**/*.*js",
-                "typescript/**/*.js",
-                "angular2/**/*.js",
-                "ng2-charts/**/*.js",
-                "chart.js/**/*.js",
-                "ng2-bootstrap/**/*.js",
-                "moment/**/*.js"
+                "es6-shim/**/*.*",
+                "systemjs/dist/**/*.*",
+                "reflect-metadata/**/*.*",
+                "rxjs/**/*.*",
+                "zone.js/**/*.*",
+                "@angular/**/*.*",
+                "jquery/**/*.**",
+                "bootstrap/**/*.*",
+                "typescript/**/*.*",
+                "ng2-charts/**/*.*",
+                "chart.js/**/*.*",
+                "ng2-bootstrap/**/*.*",
+                "moment/**/*.*",
+                "core-js/**/*.*",
+                "angular2-in-memory-web-api//**/*.*"
         ],
             {
                 cwd: "node_modules/**"

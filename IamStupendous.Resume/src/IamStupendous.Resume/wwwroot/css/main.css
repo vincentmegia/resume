@@ -37,7 +37,8 @@ p {
 
 /* Links */
 a {
-    color: #f85c37;
+    color: #374ef8;
+    /*color: #f85c37;*/
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -49,7 +50,8 @@ a {
 
 a:hover,
 a:focus {
-    color: #7b7b7b;
+    /*color: #7b7b7b;*/
+    color: #374ef8;
     text-decoration: none;
     outline: 0;
 }
@@ -153,7 +155,7 @@ a:after {
 
 /* Header Wrap */
 #headerwrap {
-	background: url(../images/header-bg.jpg) no-repeat center top;
+	background: url(../images/header-background.jpg) no-repeat center top;
 	margin-top: 60px;
 	padding-top:140px;
 	text-align:center;
@@ -281,4 +283,9 @@ a:after {
 
 sm {
 	font-size: 12px;
+}
+
+.chart {
+    display: block;
+    width: 250px;
 }

@@ -10,12 +10,13 @@ System.register(['@angular/core', '@angular/common', 'ng2-charts/ng2-charts', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, ng2_charts_1, chart_1;
+    var core_1, common_1, ng2_charts_1, chart_1, core_2;
     var SkillComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+                core_2 = core_1_1;
             },
             function (common_1_1) {
                 common_1 = common_1_1;
@@ -27,6 +28,7 @@ System.register(['@angular/core', '@angular/common', 'ng2-charts/ng2-charts', '.
                 chart_1 = chart_1_1;
             }],
         execute: function() {
+            core_2.enableProdMode();
             let SkillComponent = class SkillComponent {
                 constructor() {
                     this.charts = [
