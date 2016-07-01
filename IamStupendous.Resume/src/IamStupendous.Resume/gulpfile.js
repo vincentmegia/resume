@@ -1,4 +1,4 @@
-﻿/// <binding AfterBuild='deploy-javascript-css, deploy-html' Clean='clean' />
+﻿/// <binding Clean='clean' />
 "use strict";
 
 var gulp = require("gulp");
@@ -11,7 +11,7 @@ var destination = {
     typescripts: "./wwwroot/scripts/app"
 };
 
-var typescriptProject = typescript.createProject("./wwwroot/scripts/tsconfig.json");
+//var typescriptProject = typescript.createProject("./wwwroot/scripts/tsconfig.json");
 
 /**
  * Cleanup task
@@ -28,21 +28,21 @@ gulp.task("clean", function () {
 gulp.task("deploy-javascript-css", function () {
     gulp
         .src([
-                "es6-shim/**/*.*",
-                "systemjs/dist/**/*.*",
-                "reflect-metadata/**/*.*",
-                "rxjs/**/*.*",
-                "zone.js/**/*.*",
-                "@angular/**/*.*",
-                "jquery/**/*.**",
-                "bootstrap/**/*.*",
-                "typescript/**/*.*",
-                "ng2-charts/**/*.*",
-                "chart.js/**/*.*",
-                "ng2-bootstrap/**/*.*",
-                "moment/**/*.*",
-                "core-js/**/*.*",
-                "angular2-in-memory-web-api//**/*.*"
+                "es6-shim/**/*.js",
+                "systemjs/dist/**/*.js",
+                "reflect-metadata/**/*.js",
+                "rxjs/**/*.js",
+                "zone.js/**/*.js",
+                "@angular/**/*.js",
+                "jquery/**/*.js*",
+                "bootstrap/**/*.js",
+                "typescript/**/*.js",
+                "ng2-charts/**/*.js",
+                "chart.js/**/*.js",
+                "ng2-bootstrap/**/*.js",
+                "moment/**/*.js",
+                "core-js/**/*.js",
+                "angular2-in-memory-web-api//**/*.js"
         ],
             {
                 cwd: "node_modules/**"

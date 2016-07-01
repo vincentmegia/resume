@@ -1,5 +1,4 @@
 ﻿/// <autosync enabled="true" />
-/// <reference path="libraries/@angular/common/esm/src/location/hash_locat
 /// <reference path="../gulpfile.js" />
 /// <reference path="scripts/app/boot.js" />
 /// <reference path="scripts/app/education/education.component.js" />

@@ -248,12 +248,5 @@ export class SkillComponent {
                     { backgroundColor: ["#1abc9c", "#ecf0f1"] }
                 ])
         ];
-
-        if (this.charts[9] === undefined)
-            console.log("9 is undefined")
-        if (this.charts[10] === undefined)
-            console.log("10 is undefined")
-        if (this.charts[11] === undefined)
-            console.log("11 is undefined")
     }
 }
