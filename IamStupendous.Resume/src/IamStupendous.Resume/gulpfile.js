@@ -20,6 +20,9 @@ gulp.task("clean", function () {
     gulp
         .src(destination.libraries)
         .pipe(clean());
+    gulp
+        .src(destination.typescripts + '/**/*.map')
+        .pipe(clean());
 });
 
 /**
