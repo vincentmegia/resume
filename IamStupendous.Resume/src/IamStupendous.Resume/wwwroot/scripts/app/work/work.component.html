@@ -6,11 +6,23 @@
         </div>
         <div class="col-lg-9">
             <accordion>
-                <accordion-group *ngFor="let work of workHistory" [heading]="work.company + ' (' + work.yearStart + '-' + work.yearEnd + ')'">
-                    <p>
+                <accordion-group [panelClass]="panel-primary"
+                                 *ngFor="let work of workHistory">
+                    <div accordion-heading 
+                         (click)="work.isOpen = !work.isOpen">
+                        {{work.company + ' (' + work.yearStart + '-' + work.yearEnd + ')'}}
+
+                        <i class="pull-right glyphicon"
+                           [ngClass]="{'glyphicon-chevron-down': work?.isOpen, 'glyphicon-chevron-right': !work?.isOpen}"></i>
+                    </div>
                         <t>PROJECT(S)</t>
-                    </p>
-                    <accordion-group *ngFor="let project of work.projects" [heading]="project.title">
+                    <accordion-group *ngFor="let project of work.projects">
+                        <div accordion-heading
+                             (click)="project.isOpen = !project.isOpen">
+                            {{project.title}}
+                            <i class="pull-right glyphicon"
+                               [ngClass]="{'glyphicon-chevron-down': project?.isOpen, 'glyphicon-chevron-right': !project?.isOpen}"></i>
+                        </div>
                         <p>
                             <more>{{project.description}}</more>
                         </p>

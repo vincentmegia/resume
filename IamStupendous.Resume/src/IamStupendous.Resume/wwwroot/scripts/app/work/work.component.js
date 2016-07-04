@@ -232,7 +232,8 @@ System.register(['@angular/core', '@angular/common', './work', './project', "./r
                 core_1.Component({
                     selector: 'app-work',
                     directives: [ng2_bootstrap_1.ACCORDION_DIRECTIVES, common_1.CORE_DIRECTIVES, common_1.FORM_DIRECTIVES],
-                    templateUrl: './scripts/app/work/work.component.html'
+                    templateUrl: './scripts/app/work/work.component.html',
+                    styleUrls: ['./scripts/app/work/work.component.css']
                 }), 
                 __metadata('design:paramtypes', [])
             ], WorkComponent);

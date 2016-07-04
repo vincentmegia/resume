@@ -4,10 +4,11 @@ import { Project } from './project'
  * Work model
  */
 export class Work {
-    company: string;
-    projects: Project[];
-    yearStart: string;
-    yearEnd: string;
+    public company: string;
+    public projects: Project[];
+    public yearStart: string;
+    public yearEnd: string;
+    public isOpen: boolean;
 
     constructor(company: string,
                 yearStart: string,
@@ -17,5 +18,6 @@ export class Work {
         this.yearStart = yearStart;
         this.yearEnd = yearEnd;
         this.projects = projects;
+        this.isOpen = false;
     }
 }

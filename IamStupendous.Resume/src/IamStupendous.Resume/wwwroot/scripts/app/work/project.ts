@@ -4,10 +4,11 @@ import { Role } from './role';
  * Project Model
  */
 export class Project {
-    title: string;
-    description: string;
-    roles: Role[];
-    technologies: string;
+    public title: string;
+    public description: string;
+    public roles: Role[];
+    public technologies: string;
+    public isOpen: boolean;
 
     constructor(title: string,
                 description: string,
@@ -17,5 +18,6 @@ export class Project {
         this.description = description;
         this.roles = roles;
         this.technologies = technologies;
+        this.isOpen = false;
     }
 }
