@@ -14,6 +14,7 @@ System.register([], function(exports_1, context_1) {
                     this.description = description;
                     this.roles = roles;
                     this.technologies = technologies;
+                    this.isOpen = false;
                 }
             }
             exports_1("Project", Project);

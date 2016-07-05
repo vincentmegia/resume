@@ -14,6 +14,7 @@ System.register([], function(exports_1, context_1) {
                     this.yearStart = yearStart;
                     this.yearEnd = yearEnd;
                     this.projects = projects;
+                    this.isOpen = false;
                 }
             }
             exports_1("Work", Work);
