@@ -2,16 +2,19 @@
 "use strict";
 
 var gulp = require("gulp");
+var uglify = require("gulp-uglify");
+var concat = require("gulp-concat");
 var clean = require("gulp-clean");
 var typescript = require("gulp-typescript");
 var sourcemaps = require("gulp-sourcemaps");
 var Builder = require("systemjs-builder");
-
+var addsrc = require('gulp-add-src');
 
 var destination = {
-    libraries: "./wwwroot/libraries/",
     css: "./wwwroot/css/",
-    typescripts: "./wwwroot/scripts/app/"
+    typescripts: "./wwwroot/scripts/app/",
+    scripts: "./wwwroot/scripts/",
+    bundles: "./wwwroot/bundles"
 };
 
 var source = {
@@ -26,9 +29,6 @@ var typescriptProject = typescript.createProject(source.scripts + "tsconfig.json
  */
 gulp.task("clean", function () {
     gulp
-        .src(destination.libraries)
-        .pipe(clean());
-    gulp
         .src(destination.typescripts + '/**/*.map')
         .pipe(clean());
 });
@@ -36,30 +36,7 @@ gulp.task("clean", function () {
 /**
  * Javascript and CSS deployment task
  */
-gulp.task("deploy-javascript-css", function () {
-    gulp
-        .src([
-                "es6-shim/**/*.js",
-                "systemjs/dist/**/*.js",
-                "reflect-metadata/**/*.js",
-                "rxjs/**/*.js",
-                "zone.js/**/*.js",
-                "@angular/**/*.js",
-                "jquery/**/*.js*",
-                "bootstrap/**/*.js",
-                "typescript/**/*.js",
-                "ng2-charts/**/*.js",
-                "chart.js/**/*.js",
-                "ng2-bootstrap/**/*.js",
-                "moment/**/*.js",
-                "core-js/**/*.js",
-                "angular2-in-memory-web-api/**/*.js"
-        ],
-            {
-                cwd: "node_modules/**"
-            })
-        .pipe(gulp.dest(destination.libraries));
-
+gulp.task("deploy-css", function () {
     gulp
         .src(["node_modules/bootstrap/dist/css/bootstrap.css"])
         .pipe(gulp.dest(destination.css));
@@ -69,37 +46,63 @@ gulp.task("deploy-javascript-css", function () {
 * Transpile typescripts
 */
 gulp.task("typescript-transpile", function () {
-    return gulp.
-        src(source.typescripts + "/**/*.ts")
+    return gulp
+        .src(source.typescripts + "/**/*.ts")
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(typescript(typescriptProject))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(destination.typescripts));
 });
 
-/**
-* Bundles the typscript, this is required as the loading time is quite long
-*/
-gulp.task("typscript-output-bundle", function () {
-    // optional constructor options
-    // sets the baseURL and loads the configuration file
-    console.log("loading systemjs.config.js");
-    var builder = new Builder("", source.scripts + "systemjs.config.js");
-    console.log("loading systemjs.config.js done");
 
-    /*
-       the parameters of the below buildStatic() method are:
-           - your transcompiled application boot file (the one wich would contain the bootstrap(MyApp, [PROVIDERS]) function - in my case 'dist/app/boot.js'
-           - the output (file into which it would output the bundled code)
-           - options {}
-    */
-    return builder
-        .buildStatic(source.typescripts + "/boot.js", source.typescripts + "/bundle.js", { minify: true, sourceMaps: true })
+/**
+* Bundles the angular2 application
+*/
+gulp.task("bundle-application", function () {
+    var builder = new Builder();
+    builder.loadConfig(source.scripts + "systemjs.config.js")
         .then(function () {
-            console.log("Build complete");
+            return builder.buildStatic('app', destination.scripts + "app.min.js", {
+                minify: true,
+                mangle: true,
+                rollup: true,
+            });
         })
-        .catch(function (err) {
-            console.log("Build error");
-            console.log(err);
+        .then(function () {
+            console.log('bundle built successfully!');
         });
+});
+
+
+/**
+* Bundles other dependencies
+*/
+gulp.task('bundle-dependencies', function () {
+    gulp.src(['node_modules/rxjs/**/*'])
+      .pipe(gulp.dest(destination.bundles));
+
+    gulp.src(['node_modules/angular2-in-memory-web-api/**/*'])
+      .pipe(gulp.dest(destination.bundles));
+
+    gulp.src([
+      'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js',
+      'node_modules/core-js/client/shim.min.js',
+      'node_modules/zone.js/dist/zone.js',
+      'node_modules/reflect-metadata/Reflect.js',
+      'node_modules/chart.js/dist/Chart.min.js',
+      'node_modules/es6-shim/es6-shim.min.js', 
+      'node_modules/systemjs/dist/system-polyfills.js',
+    ])
+      .pipe(concat('vendors.min.js'))
+      .pipe(uglify())
+      .pipe(gulp.dest(destination.scripts));
+});
+
+// Minify JS bundle
+gulp.task('minify-javascripts', function () {
+    return gulp
+      .src(['wwwroot/scripts/app.min.js', "wwwroot/scripts/vendor.min.js'"])
+      .pipe(uglify())
+      .pipe(gulp.dest('wwwroot/bundles'));
 });

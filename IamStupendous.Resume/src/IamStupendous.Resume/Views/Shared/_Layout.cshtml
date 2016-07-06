@@ -3,10 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache"/>
     <title>Vincent Megia Resume</title>
 
-    <environment names="Development">
         <!-- Css -->
         <link rel="stylesheet" href="~/css/bootstrap.css"/>
         <link rel="stylesheet" href="~/css/font-awesome.css" />
@@ -14,39 +13,23 @@
         <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css"/>
         <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css"/>
         
-        <!-- TODO: Move package dependency managemtn to systemjs -->
-        @*<script src="~/libraries/es6-shim/es6-shim.min.js"></script>*@
-        @*<script src="~/scripts/shims_for_IE.js"></script>*@
-        
+        <!-- DEV FILES -->
+        @*<script src="~/libraries/es6-shim/es6-shim.min.js"></script>
         <script src="~/libraries/core-js/client/shim.min.js"></script>
         <script src="~/libraries/zone.js/dist/zone.js"></script>
         <script src="~/libraries/reflect-metadata/Reflect.js"></script>
-        <script src="~/libraries/systemjs/dist/system.src.js"></script>
-        <script src="~/libraries/typescript/lib/typescript.js"></script>
-        <script src="~/libraries/chart.js/dist/Chart.js"></script><!-- some weird reason, this cannot be loaded in systemjs which irritates me-->
+        <script src="~/libraries/systemjs/dist/system.src.js"></script>*@
+        @*<script src="~/libraries/typescript/lib/typescript.js"></script>*@
+        @*<script src="~/libraries/chart.js/dist/Chart.js"></script>*@<!-- some weird reason, this cannot be loaded in systemjs which irritates me-->
 
         <!-- 2. Configure SystemJS -->
-        <script src="~/scripts/systemjs.config.js"></script>
-        <script src="~/scripts/main.js"></script>
-    </environment>
-
-    @*<environment names="Production">
-        <link rel="stylesheet" href="~/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/font-awesome.css" />
-        <link rel="stylesheet" href="~/css/main.css" />
-        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css" />
-        <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css" />
-
-        <script src="~/libraries/core-js/client/shim.min.js"></script>
-        <script src="~/libraries/zone.js/dist/zone.js"></script>
-        <script src="~/libraries/reflect-metadata/Reflect.js"></script>
-        <script src="~/libraries/systemjs/dist/system.src.js"></script>
-        <script src="~/libraries/typescript/lib/typescript.js"></script>
-        <script src="~/libraries/chart.js/dist/Chart.js"></script><!-- some weird reason, this cannot be loaded in systemjs which irritates me-->
-        <!-- 2. Configure SystemJS -->
-        <script src="~/scripts/systemjs.config.js"></script>
-        <script src="~/scripts/main.js"></script>
-    </environment>*@
+        @*<script src="~/scripts/systemjs.config.js"></script>*@
+        @*<script src="~/scripts/es6-shim.min.js"></script>
+        <script src="~/scripts/system-polyfills.js"></script>
+        <script src="~/scripts/shims_for_IE.js"></script>*@ 
+        @*<script src="~/scripts/main.js"></script>*@
+        <script src="~/scripts/vendors.min.js"></script>
+        <script src="~/scripts/app.min.js"></script>
 </head>
 <body>
     <div>

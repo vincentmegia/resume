@@ -2,15 +2,15 @@
 
     // map tells the System loader where to look for things
     var map = {
-        'app': 'scripts/app', // 'dist',
-        'rxjs': 'libraries/rxjs',
-        'angular2-in-memory-web-api': 'libraries/angular2-in-memory-web-api',
-        '@angular': 'libraries/@angular',
-        'jquery': 'libraries/jquery',
-        'bootstrap': 'libraries/bootstrap',
-        'moment': 'libraries/moment/moment.js',
-        'ng2-bootstrap': 'libraries/ng2-bootstrap',
-        'ng2-charts': 'libraries/ng2-charts',
+        'app': './wwwroot/scripts/app', // 'dist',
+        'rxjs': 'node_modules/rxjs',
+        'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+        '@angular': 'node_modules/@angular',
+        'jquery': 'node_modules/jquery',
+        'bootstrap': 'node_modules/bootstrap',
+        'moment': 'node_modules/moment/moment.js',
+        'ng2-bootstrap': 'node_modules/ng2-bootstrap',
+        'ng2-charts': 'node_modules/ng2-charts',
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
