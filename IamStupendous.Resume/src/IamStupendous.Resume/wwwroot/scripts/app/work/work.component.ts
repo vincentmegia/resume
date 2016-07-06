@@ -11,8 +11,7 @@ enableProdMode();
 @Component({
     selector: 'app-work',
     directives: [ACCORDION_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES],
-    templateUrl: './scripts/app/work/work.component.html',
-    styleUrls: ['./scripts/app/work/work.component.css']
+    templateUrl: './scripts/app/work/work.component.html'
 })
 export class WorkComponent {
     workHistory: Work[];

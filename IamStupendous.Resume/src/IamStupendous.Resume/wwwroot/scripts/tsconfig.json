@@ -3,19 +3,24 @@
     "compilerOptions": {
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "module": "system",
+        "module": "commonjs",
         "noEmitOnError": true,
         "noImplicitAny": false,
         "removeComments": false,
         "sourceMap": true,
-        "target": "es6",
+        "target": "es5",
         "moduleResolution": "node",
-        "outDir": "../scripts/app/"
+        "outDir": "../scripts/app/",
     },
     "exclude": [
         "node_modules",
         "typings/main",
         "typings/main.d.ts"
+    ],
+    "scripts": [
+        "typings/main/ambient/es6-promise/es6-promise.d.ts",
+        "typings/main/ambient/es6-collections/es6-collections.d.ts"
     ]
+
     //,"files": [ "typings/globals/chart.js/index.d.ts" ]
 }

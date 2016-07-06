@@ -1,4 +1,5 @@
-﻿import { bootstrap } from '@angular/platform-browser-dynamic';
+﻿///<reference path="../../../node_modules/typescript/lib/lib.es6.d.ts"/>
+import { bootstrap } from '@angular/platform-browser-dynamic';
 import { HeaderComponent } from './header/header.component';
 import { TitleComponent } from './title/title.component';
 import { SummaryComponent } from './summary/summary.component';
