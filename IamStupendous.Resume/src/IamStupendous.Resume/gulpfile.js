@@ -14,7 +14,8 @@ var destination = {
     css: "./wwwroot/css/",
     typescripts: "./wwwroot/scripts/app/",
     scripts: "./wwwroot/scripts/",
-    bundles: "./wwwroot/bundles"
+    bundles: "./wwwroot/bundles",
+    libraries: "./wwwroot/libraries/"
 };
 
 var source = {
@@ -34,13 +35,43 @@ gulp.task("clean", function () {
 });
 
 /**
- * Javascript and CSS deployment task
+ * CSS deployment task
  */
 gulp.task("deploy-css", function () {
     gulp
         .src(["node_modules/bootstrap/dist/css/bootstrap.css"])
         .pipe(gulp.dest(destination.css));
 });
+
+/**
+* Javascript deployment task
+*/
+
+gulp.task("deploy-javascript", function () {
+    gulp
+        .src([
+                "es6-shim/**/*.js",
+                "systemjs/dist/**/*.js",
+                "reflect-metadata/**/*.js",
+                "rxjs/**/*.js",
+                "zone.js/**/*.js",
+                "@angular/**/*.js",
+                "jquery/**/*.js*",
+                "bootstrap/**/*.js",
+                "typescript/**/*.js",
+                "ng2-charts/**/*.js",
+                "chart.js/**/*.js",
+                "ng2-bootstrap/**/*.js",
+                "moment/**/*.js",
+                "core-js/**/*.js",
+                "angular2-in-memory-web-api/**/*.js"
+        ],
+            {
+                cwd: "node_modules/**"
+            })
+        .pipe(gulp.dest(destination.libraries));
+});
+
 
 /**
 * Transpile typescripts
@@ -78,11 +109,11 @@ gulp.task("bundle-application", function () {
 * Bundles other dependencies
 */
 gulp.task('bundle-dependencies', function () {
-    gulp.src(['node_modules/rxjs/**/*'])
-      .pipe(gulp.dest(destination.bundles));
+    //gulp.src(['node_modules/rxjs/**/*'])
+    //  .pipe(gulp.dest(destination.bundles));
 
-    gulp.src(['node_modules/angular2-in-memory-web-api/**/*'])
-      .pipe(gulp.dest(destination.bundles));
+    //gulp.src(['node_modules/angular2-in-memory-web-api/**/*'])
+    //  .pipe(gulp.dest(destination.bundles));
 
     gulp.src([
       'node_modules/jquery/dist/jquery.min.js',
@@ -104,5 +135,5 @@ gulp.task('minify-javascripts', function () {
     return gulp
       .src(['wwwroot/scripts/app.min.js', "wwwroot/scripts/vendor.min.js'"])
       .pipe(uglify())
-      .pipe(gulp.dest('wwwroot/bundles'));
+      .pipe(gulp.dest('wwwroot/scripts/bundle.min.js'));
 });

@@ -1,21 +1,31 @@
-import { Component } from '@angular/core';
-import { enableProdMode } from '@angular/core';
-
-enableProdMode();
+import { Component, OnInit } from '@angular/core';
+import { Title } from './title';
+import { TitleService } from './title.service';
 
 @Component({
     selector: 'app-title',
-    templateUrl: './scripts/app/title/title.component.html'
+    templateUrl: './scripts/app/title/title.component.html',
+    providers: [TitleService]
 })
 
-export class TitleComponent {
-    name: string;
-    description: string;
-    email: string;
+export class TitleComponent implements OnInit {
+    title: Title;
 
-    constructor() {
-        this.name = "Vincent Gatchalian Megia";
-        this.description = "Software Engineer";
-        this.email = "vincent.megia@gmail.com";
+    constructor(private titleService: TitleService) { }
+
+    /**
+     * 
+     */
+    getTitles() {
+        let titles = this.titleService
+            .getTitles();
+        this.title = titles[0];
+    }
+
+    /**
+     * 
+     */
+    ngOnInit() {
+        this.getTitles();
     }
 }

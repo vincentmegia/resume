@@ -1,23 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Education } from './education';
-import { enableProdMode } from '@angular/core';
+import { EducationService } from './education.service';
 
-enableProdMode();
 
 @Component({
     selector: 'app-education',
-    templateUrl: './scripts/app/education/education.component.html'
+    templateUrl: './scripts/app/education/education.component.html',
+    providers: [EducationService]
 })
 
-export class EducationComponent {
-    educations: Education[];
+export class EducationComponent implements OnInit {
+    educations: Array<Education>;
 
-    constructor() {
-        this.educations = [];
-        this.educations.push(new Education(
-            "De La Salle University",
-            "Bachelor of Science in Computer Science",
-            "1997",
-            "2002"));
+    constructor(private educationService: EducationService) { }
+
+    /**
+     * Retrieves the educations data
+     */
+    getEducations() {
+        this.educations = this.educationService
+            .getEducations();
+        //    .then(educations => this.educations = educations)
+        //    .catch(error => console.log(error));
+        //console.log(this.educations);
+        //console.log("educations retrieve completed.");
+    }
+
+    /**
+     *
+     */
+    ngOnInit() {
+        this.getEducations();
     }
 }
