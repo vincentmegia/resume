@@ -1,18 +1,6 @@
 {
     "name": "stupendous-resume",
     "version": "1.0.0",
-    "scripts": {
-        "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-        "lite": "lite-server",
-        "postinstall": "typings install",
-        "tsc": "tsc",
-        "tsc:w": "tsc -w",
-        "typings": "typings",
-        "build_prod": "npm run clean && npm run browserify",
-        "clean": "del /S/Q public\\dist",
-        "browserify": "browserify -s main  public/YourMainModule.js > public/dist/bundle.js && npm run minify",
-        "minify": "uglifyjs public/dist/bundle.js --screw-ie8 --compress --mangle --output public/dist/bundle.min.js"
-    },
     "dependencies": {
         "@angular/common": "2.0.0-rc.2",
         "@angular/compiler": "2.0.0-rc.2",

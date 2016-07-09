@@ -1,5 +1,6 @@
 ﻿{
     "version": "1.6.0",
+    "compileOnSave": true,
     "compilerOptions": {
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -17,5 +18,4 @@
         "typings/main",
         "typings/main.d.ts"
     ]
-    //,"files": [ "typings/globals/chart.js/index.d.ts" ]
 }

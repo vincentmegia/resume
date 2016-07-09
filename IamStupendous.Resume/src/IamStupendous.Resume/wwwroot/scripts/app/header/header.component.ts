@@ -1,11 +1,55 @@
-import { Component } from '@angular/core';
-import { enableProdMode } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
+import { HeaderService } from './header.service';
+import { MenuItem } from './menu-item';
 
-enableProdMode();
 
 @Component({
     selector: 'app-header',
-    templateUrl: './scripts/app/header/header.component.html'
+    templateUrl: './scripts/app/header/header.component.html',
+    providers: [HeaderService],
+    animations: [
+        trigger('menuState', [
+            state('inactive', style({
+                transform: 'scale(1)'
+            })),
+            state('active', style({
+                transform: 'scale(1.3)'
+            })),
+            transition('inactive => active', animate('100ms ease-in')),
+            transition('active => inactive', animate('100ms ease-out'))
+        ])
+    ]
 })
 
-export class HeaderComponent { }
+export class HeaderComponent implements OnInit {
+    menuItems: Array<MenuItem>;
+
+    constructor(private headerService: HeaderService) { }
+
+    /**
+     * 
+     */
+    getMenuItems() {
+        this.menuItems = this.headerService
+            .getMenuItems();
+    }
+
+    /**
+     * 
+     * @param menuItem
+     */
+    toggle(selectedMenuItem: MenuItem) {
+        selectedMenuItem.toggle();
+        for (let menuItem of this.menuItems) {
+            if (menuItem.id === selectedMenuItem.id) continue;
+            menuItem.toggleInactive();
+        } 
+    }
+
+    /**
+     * 
+     */
+    ngOnInit() {
+        this.getMenuItems();
+    }
+}
