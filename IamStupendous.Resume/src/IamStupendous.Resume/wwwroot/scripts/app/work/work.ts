@@ -4,11 +4,11 @@ import { Project } from './project'
  * Work model
  */
 export class Work {
-    public company: string;
-    public projects: Project[];
-    public yearStart: string;
-    public yearEnd: string;
-    public isOpen: boolean;
+    company: string;
+    projects: Project[];
+    yearStart: string;
+    yearEnd: string;
+    isOpen: boolean;
 
     constructor(company: string,
                 yearStart: string,

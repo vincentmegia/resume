@@ -2,9 +2,9 @@
  * Skill model class
  */
 export class Skill {
-    public name: string;
-    public expertise: number;
-    public unknown: number;
+    name: string;
+    expertise: number;
+    unknown: number;
 
     constructor(name: string,
                 expertise: number) {

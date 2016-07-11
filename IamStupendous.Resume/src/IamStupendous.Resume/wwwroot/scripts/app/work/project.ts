@@ -4,11 +4,11 @@ import { Role } from './role';
  * Project Model
  */
 export class Project {
-    public title: string;
-    public description: string;
-    public roles: Role[];
-    public technologies: string;
-    public isOpen: boolean;
+    title: string;
+    description: string;
+    roles: Role[];
+    technologies: string;
+    isOpen: boolean;
 
     constructor(title: string,
                 description: string,
