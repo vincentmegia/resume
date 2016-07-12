@@ -8,5 +8,13 @@ namespace IamStupendous.Resume.Models
         public string Degree { get; set; }
         public DateTime YearStart { get; set; } 
         public DateTime YearEnd { get; set; }
+
+        public Education(string school, string degree, DateTime yearStart, DateTime yearEnd)
+        {
+            School = school;
+            Degree = degree;
+            YearStart = yearStart;
+            YearEnd = yearEnd;
+        }
     }
 }

@@ -10,5 +10,13 @@ namespace IamStupendous.Resume.Models
         public IList<Role> Roles { get; set; }
         public string Technologies { get; set; }
         public bool IsOpen { get; set; }
+
+        public Project(string title, string description, IList<Role> roles, string technologies)
+        {
+            Title = title;
+            Description = description;
+            Roles = roles;
+            Technologies = technologies;
+        }
     }
 }
