@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using IamStupendous.Resume.Models;
-using IamStupendous.Resume.Repository;
+using IamStupendous.Resume.Repositories;
 
 namespace IamStupendous.Resume.Services
 {

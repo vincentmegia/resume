@@ -5,12 +5,12 @@ namespace IamStupendous.Resume.ViewModels
 {
     public class ResumeViewModel
     {
-        private readonly Title _title;
-        private readonly List<Work> _works;
-        private readonly List<Education> _educatons;
-        private readonly List<MenuItem> _menuItems;
-        private readonly List<Skill> _skills;
-        private readonly List<Summary> _summaries;
+        public Title Title { get; private set; }
+        public List<Work> Works { get; private set; }
+        public List<Education> Educatons { get; private set; }
+        public List<MenuItem> MenuItems { get; private set; }
+        public List<Skill> Skills { get; private set; }
+        public List<Summary> Summaries { get; private set; }
 
         public ResumeViewModel(Title title,
             List<Work> works,
@@ -19,12 +19,12 @@ namespace IamStupendous.Resume.ViewModels
             List<Skill> skills,
             List<Summary> summaries)
         {
-            _title = title;
-            _works = works;
-            _educatons = educatons;
-            _menuItems = menuItems;
-            _skills = skills;
-            _summaries = summaries;
+            Title = title;
+            Works = works;
+            Educatons = educatons;
+            MenuItems = menuItems;
+            Skills = skills;
+            Summaries = summaries;
         }
     }
 }

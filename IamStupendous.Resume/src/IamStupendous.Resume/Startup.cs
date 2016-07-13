@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using IamStupendous.Resume.Repositories;
+using IamStupendous.Resume.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 
 namespace IamStupendous.Resume
@@ -50,6 +53,12 @@ namespace IamStupendous.Resume
             // Add application services.
             //services.AddTransient<IEmailSender, AuthMessageSender>();
             //services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddSingleton<IEducationService, EducationService>();
+            services.AddSingleton<ISkillService, SkillService>();
+            services.AddSingleton<ISummaryService, SummaryService>();
+            services.AddSingleton<ITitleService, TitleService>();
+            services.AddSingleton<IWorkService, WorkService>();
+            services.AddSingleton<IWorkRepository, WorkRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,7 +3,7 @@ using IamStupendous.Resume.Models;
 
 namespace IamStupendous.Resume.Services
 {
-    interface IWorkService
+    public interface IWorkService
     {
         IList<Work> GetWorks();
     }
