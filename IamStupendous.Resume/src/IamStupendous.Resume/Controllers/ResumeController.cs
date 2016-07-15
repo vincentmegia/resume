@@ -26,7 +26,6 @@ namespace IamStupendous.Resume.Controllers
             _skillService = skillService;
             _summaryService = summaryService;
             _titleService = titleService;
-
         }
 
         /// <summary>
@@ -34,10 +33,23 @@ namespace IamStupendous.Resume.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ResumeViewModel Get()
+        public IResumeViewModel Get()
         {
-            var works = _workService.GetWorks().ToList();
-            var viewModel = new ResumeViewModel(null, works, null, null, null, null);
+            var works = _workService
+                .GetWorks()
+                .ToList();
+            var educations = _educationService
+                .GetEducations()
+                .ToList();
+            var skills = _skillService
+                .GetSkills()
+                .ToList();
+            var summaries = _summaryService
+                .GetSummaries()
+                .ToList();
+            var titles = _titleService
+                .GetTitle();
+            var viewModel = new ResumeViewModel(titles, works, educations, null, skills, summaries);
             return viewModel;
         }
     }

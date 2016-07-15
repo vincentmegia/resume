@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using IamStupendous.Resume.Models;
 
-namespace IamStupendous.Resume.Services
+namespace IamStupendous.Resume.Repositories
 {
-    public interface ITitleService
+    public interface ISkillRepository
     {
         /// <summary>
-        /// 
+        /// Retrj
         /// </summary>
         /// <returns></returns>
-        IList<Title> GetTitle();
+        IList<Skill> GetSkills();
     }
 }

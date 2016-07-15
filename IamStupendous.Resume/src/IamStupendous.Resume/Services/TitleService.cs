@@ -1,13 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using IamStupendous.Resume.Models;
+using IamStupendous.Resume.Repositories;
 
 namespace IamStupendous.Resume.Services
 {
     public class TitleService : ITitleService
     {
-        public Title GetTitle()
+        private readonly ITitleRepository _titleRepository;
+
+        public TitleService(ITitleRepository titleRepository)
         {
-            throw new NotImplementedException();
+            _titleRepository = titleRepository;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IList<Title> GetTitle()
+        {
+            return _titleRepository.GetTitles();
         }
     }
 }

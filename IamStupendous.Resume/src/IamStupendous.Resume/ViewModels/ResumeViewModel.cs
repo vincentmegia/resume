@@ -3,21 +3,21 @@ using IamStupendous.Resume.Models;
 
 namespace IamStupendous.Resume.ViewModels
 {
-    public class ResumeViewModel
+    public class ResumeViewModel : IResumeViewModel
     {
-        public Title Title { get; private set; }
-        public List<Work> Works { get; private set; }
-        public List<Education> Educatons { get; private set; }
-        public List<MenuItem> MenuItems { get; private set; }
-        public List<Skill> Skills { get; private set; }
-        public List<Summary> Summaries { get; private set; }
+        public IList<Title> Title { get; set; }
+        public IList<Work> Works { get; set; }
+        public IList<Education> Educatons { get; set; }
+        public IList<MenuItem> MenuItems { get; set; }
+        public IList<Skill> Skills { get; set; }
+        public IList<Summary> Summaries { get; set; }
 
-        public ResumeViewModel(Title title,
-            List<Work> works,
-            List<Education> educatons,
-            List<MenuItem> menuItems,
-            List<Skill> skills,
-            List<Summary> summaries)
+        public ResumeViewModel(IList<Title> title,
+            IList<Work> works,
+            IList<Education> educatons,
+            IList<MenuItem> menuItems,
+            IList<Skill> skills,
+            IList<Summary> summaries)
         {
             Title = title;
             Works = works;

@@ -1,14 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using IamStupendous.Resume.Models;
+using IamStupendous.Resume.Repositories;
 
 namespace IamStupendous.Resume.Services
 {
     public class EducationService : IEducationService
     {
+        private readonly IEducationRepository _educationRepository;
+
+        public EducationService(IEducationRepository educationRepository)
+        {
+            _educationRepository = educationRepository;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IList<Education> GetEducations()
         {
-            throw new NotImplementedException();
+            return _educationRepository.GetEducations();
         }
     }
 }

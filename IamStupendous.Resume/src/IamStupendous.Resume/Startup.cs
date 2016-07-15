@@ -40,25 +40,19 @@ namespace IamStupendous.Resume
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            //services.AddIdentity<ApplicationUser, IdentityRole>()
-            //    .AddEntityFrameworkStores<ApplicationDbContext>()
-            //    .AddDefaultTokenProviders();
-
             services.AddMvc();
 
             // Add application services.
-            //services.AddTransient<IEmailSender, AuthMessageSender>();
-            //services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddSingleton<IEducationService, EducationService>();
             services.AddSingleton<ISkillService, SkillService>();
             services.AddSingleton<ISummaryService, SummaryService>();
             services.AddSingleton<ITitleService, TitleService>();
             services.AddSingleton<IWorkService, WorkService>();
             services.AddSingleton<IWorkRepository, WorkRepository>();
+            services.AddSingleton<IEducationRepository, EducationRepository>();
+            services.AddSingleton<ISkillRepository, SkillRepository>();
+            services.AddSingleton<ISummaryRepository, SummaryRepository>();
+            services.AddSingleton<ITitleRepository, TitleRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
