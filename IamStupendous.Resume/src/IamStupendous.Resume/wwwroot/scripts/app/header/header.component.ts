@@ -2,7 +2,6 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
 import { HeaderService } from './header.service';
 import { MenuItem } from './menu-item';
 
-
 @Component({
     selector: 'app-header',
     templateUrl: './scripts/app/header/header.component.html',
@@ -23,6 +22,7 @@ import { MenuItem } from './menu-item';
 
 export class HeaderComponent implements OnInit {
     menuItems: Array<MenuItem>;
+    errorMessage: string;
 
     constructor(private headerService: HeaderService) { }
 
@@ -30,8 +30,17 @@ export class HeaderComponent implements OnInit {
      * 
      */
     getMenuItems() {
-        this.menuItems = this.headerService
-            .getMenuItems();
+        this.headerService
+            .getMenuItems()
+            .subscribe(
+                menuItems => {
+                    this.menuItems = menuItems;
+                    console.log(menuItems);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.log(this.errorMessage);
+                });
     }
 
     /**

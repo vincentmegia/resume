@@ -2,12 +2,11 @@
 using IamStupendous.Resume.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 
 namespace IamStupendous.Resume
 {
@@ -40,7 +39,15 @@ namespace IamStupendous.Resume
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-            services.AddMvc();
+            services
+                .AddMvc(options =>
+                {
+                    var formatter = new JsonOutputFormatter
+                    {
+                        SerializerSettings = {ContractResolver = new CamelCasePropertyNamesContractResolver()}
+                    };
+                    options.OutputFormatters.Insert(0, formatter);
+                });
 
             // Add application services.
             services.AddSingleton<IEducationService, EducationService>();
@@ -66,7 +73,6 @@ namespace IamStupendous.Resume
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
                 app.UseBrowserLink();
             }
             else

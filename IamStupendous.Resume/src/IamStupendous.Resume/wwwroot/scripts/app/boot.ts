@@ -9,9 +9,11 @@ import { SkillComponent } from './skill/skill.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignatureComponent } from './signature/signature.component';
 import { enableProdMode } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
+import './rxjs-operators';
 
 enableProdMode();
-bootstrap(HeaderComponent);
+bootstrap(HeaderComponent, [HTTP_PROVIDERS]);
 bootstrap(TitleComponent);
 bootstrap(SummaryComponent);
 bootstrap(EducationComponent);
