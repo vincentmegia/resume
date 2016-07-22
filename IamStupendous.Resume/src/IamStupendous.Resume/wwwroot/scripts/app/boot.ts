@@ -14,10 +14,10 @@ import './rxjs-operators';
 
 enableProdMode();
 bootstrap(HeaderComponent, [HTTP_PROVIDERS]);
-bootstrap(TitleComponent);
-bootstrap(SummaryComponent);
-bootstrap(EducationComponent);
-bootstrap(WorkComponent);
-bootstrap(SkillComponent);
-bootstrap(FooterComponent);
-bootstrap(SignatureComponent);
+bootstrap(TitleComponent, [HTTP_PROVIDERS]);
+bootstrap(SummaryComponent, [HTTP_PROVIDERS]);
+bootstrap(EducationComponent, [HTTP_PROVIDERS]);
+bootstrap(WorkComponent, [HTTP_PROVIDERS]);
+bootstrap(SkillComponent, [HTTP_PROVIDERS]);
+bootstrap(FooterComponent, [HTTP_PROVIDERS]);
+bootstrap(SignatureComponent, [HTTP_PROVIDERS]);

@@ -20,4 +20,16 @@ export class Project {
         this.technologies = technologies;
         this.isOpen = false;
     }
+
+    /**
+     * fromJSON is used to convert an serialized version
+     * of the User to an instance of the class
+     * @param json
+     */
+    static create(json: Project): Project {
+        // create an instance of the User class
+        let project = Object.create(Project.prototype);
+        // copy all the fields from the json object
+        return Object.assign(project, json, {});
+    }
 }

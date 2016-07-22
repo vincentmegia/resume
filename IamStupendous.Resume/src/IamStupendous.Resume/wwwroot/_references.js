@@ -3364,7 +3364,6 @@
 /// <reference path="scripts/app/footer/footer.component.js" />
 /// <reference path="scripts/app/header/header.component.js" />
 /// <reference path="scripts/app/header/header.service.js" />
-/// <reference path="scripts/app/header/imenu-item.js" />
 /// <reference path="scripts/app/header/menu-item.js" />
 /// <reference path="scripts/app/header/mock-menu-items.js" />
 /// <reference path="scripts/app/header/state.js" />

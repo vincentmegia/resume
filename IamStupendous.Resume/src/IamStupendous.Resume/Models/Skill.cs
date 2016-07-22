@@ -3,12 +3,12 @@
     public class Skill
     {
         public string Name { get; set; }
-        public int Experetise { get; set; }
+        public int Expertise { get; set; }
 
-        public Skill(string name, int experetise)
+        public Skill(string name, int expertise)
         {
             Name = name;
-            Experetise = experetise;
+            Expertise = expertise;
         }
     }
 }

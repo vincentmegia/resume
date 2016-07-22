@@ -10,16 +10,27 @@ import { TitleService } from './title.service';
 
 export class TitleComponent implements OnInit {
     title: Title;
+    errorMessage: string;
 
-    constructor(private titleService: TitleService) { }
+    constructor(private titleService: TitleService) {
+        this.title = new Title(null, null, null); //need to fix where view is rendering first before data retrieval is complete
+    }
 
     /**
      * 
      */
     getTitles() {
-        let titles = this.titleService
-            .getTitles();
-        this.title = titles[0];
+        this.titleService
+            .getTitles()
+            .subscribe(
+                titles => {
+                    this.title = titles[0];
+                    console.log(titles);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.log(this.errorMessage);
+                });
     }
 
     /**

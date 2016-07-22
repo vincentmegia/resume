@@ -5,7 +5,7 @@
                 <div class="dropdown">
                     <ul id="nav" class="nav">
                         <li class="menu-item"
-                            *ngFor="let menuItem of menuItems | async">
+                            *ngFor="let menuItem of menuItems">
                             <a class="smoothScroll" [href]="menuItem.id" [title]="menuItem.text">
                                 <i @menuState="menuItem.state"
                                    (click)="toggle(menuItem)"

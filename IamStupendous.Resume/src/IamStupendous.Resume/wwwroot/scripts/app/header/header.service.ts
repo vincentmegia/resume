@@ -3,12 +3,10 @@ import { Http, Response } from '@angular/http';
 import { MenuItem  } from './menu-item';
 import { Observable } from 'rxjs/Observable';
 
-//import { MENUITEMS } from './mock-menu-items';
-
 @Injectable()
 export class HeaderService {
 
-    private menuItemUrlEndPoint = 'api/resume';
+    private endPoint = 'api/resume';
 
     constructor(private http: Http) {}
 
@@ -16,8 +14,8 @@ export class HeaderService {
      * 
      */
     getMenuItems(): Observable<Array<MenuItem>> {
-        return this.http.get(this.menuItemUrlEndPoint)
-            .map(this.extractData)
+        return this.http.get(this.endPoint)
+            .map(this.deserialize)
             .catch(this.handleError);
     }
 
@@ -25,10 +23,14 @@ export class HeaderService {
      * 
      * @param res
      */
-    private extractData(response: Response) {
-        let body = response.json();
-        
-        return body || {};
+    private deserialize(response: Response) {
+        let payload = response.json();
+        let menuItems: Array<MenuItem> = [];
+        for (let menuItem of payload.menuItems) {
+            let item = MenuItem.create(menuItem);
+            menuItems.push(item);
+        }
+        return menuItems;
     }
 
     /**

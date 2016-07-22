@@ -17,6 +17,7 @@ import { WorkService } from './work.service';
 
 export class WorkComponent {
     works: Work[];
+    errorMessage: string;
 
     constructor(private workService: WorkService) { }
 
@@ -24,8 +25,17 @@ export class WorkComponent {
      * 
      */
     getWorks() {
-        this.works = this.workService
-            .getWorks();
+        this.workService
+            .getWorks()
+            .subscribe(
+                works => {
+                    this.works = works;
+                    console.log(works);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.log(this.errorMessage);
+                });
     }
 
     ngOnInit() {

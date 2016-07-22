@@ -5,9 +5,9 @@ namespace IamStupendous.Resume.ViewModels
 {
     public interface IResumeViewModel
     {
-        IList<Title> Title { get; set; }
+        IList<Title> Titles { get; set; }
         IList<Work> Works { get; set; }
-        IList<Education> Educatons { get; set; }
+        IList<Education> Educations { get; set; }
         IList<MenuItem> MenuItems { get; set; }
         IList<Skill> Skills { get; set; }
         IList<Summary> Summaries { get; set; }

@@ -5,23 +5,23 @@ namespace IamStupendous.Resume.ViewModels
 {
     public class ResumeViewModel : IResumeViewModel
     {
-        public IList<Title> Title { get; set; }
+        public IList<Title> Titles { get; set; }
         public IList<Work> Works { get; set; }
-        public IList<Education> Educatons { get; set; }
+        public IList<Education> Educations { get; set; }
         public IList<MenuItem> MenuItems { get; set; }
         public IList<Skill> Skills { get; set; }
         public IList<Summary> Summaries { get; set; }
 
-        public ResumeViewModel(IList<Title> title,
+        public ResumeViewModel(IList<Title> titles,
             IList<Work> works,
-            IList<Education> educatons,
+            IList<Education> educations,
             IList<MenuItem> menuItems,
             IList<Skill> skills,
             IList<Summary> summaries)
         {
-            Title = title;
+            Titles = titles;
             Works = works;
-            Educatons = educatons;
+            Educations = educations;
             MenuItems = menuItems;
             Skills = skills;
             Summaries = summaries;
