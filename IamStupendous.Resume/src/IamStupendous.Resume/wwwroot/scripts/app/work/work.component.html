@@ -10,7 +10,7 @@
                                  *ngFor="let work of works">
                     <div accordion-heading 
                          (click)="work.isOpen = !work.isOpen">
-                        {{work.company + ' (' + work.yearStart + '-' + work.yearEnd + ')'}}
+                        {{work.company + ' (' + (work.yearStart | date:'MMM-yyyy') + '-' + (work.yearEnd | date:'MMM-yyyy') + ')'}}
                         <i class="pull-right glyphicon"
                            [ngClass]="{'glyphicon-chevron-down': work?.isOpen, 'glyphicon-chevron-right': !work?.isOpen}"></i>
                     </div>
