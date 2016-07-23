@@ -16,15 +16,18 @@ import { SkillService } from './skill.service';
 
 export class SkillComponent implements OnInit {
     charts: Array<Chart>;
+    errorMessage: string;
 
-    constructor(private skillService: SkillService) { }
+    constructor(private skillService: SkillService) {
+        this.charts = Array<Chart>();
+    }
 
     /**
      * Skills arrays
      * @param skills
      */
-    generateCharts(skills: Skill[]) {
-        let charts: Chart[] = [];
+    generateCharts(skills: Array<Skill>) {
+        let charts = new Array<Chart>();
         for (let skill of skills) {
             charts.push(
                 new Chart(
@@ -57,10 +60,27 @@ export class SkillComponent implements OnInit {
     /**
      * 
      */
-    ngOnInit() {
-        let skills = this.skillService
+    getSkills() {
+        let skills: Array<Skill>;
+        this.skillService
             .getSkills()
-            //.then(skills => skills = skills);
-        this.charts = this.generateCharts(skills);
+            .subscribe(
+                items => {
+                    skills = items;
+                    console.log(skills);
+                    this.charts = this.generateCharts(skills);
+                    console.log(this.charts);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.log(this.errorMessage);
+                });
+    }
+
+    /**
+     * 
+     */
+    ngOnInit() {
+        this.getSkills();
     }
 }
