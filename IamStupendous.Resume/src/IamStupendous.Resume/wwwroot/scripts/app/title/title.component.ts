@@ -9,17 +9,28 @@ import { TitleService } from './title.service';
 })
 
 export class TitleComponent implements OnInit {
-    title: Title;
+    titles: Array<Title>;
+    errorMessage: string;
 
-    constructor(private titleService: TitleService) { }
+    constructor(private titleService: TitleService) {
+        this.titles = new Array<Title>();
+    }
 
     /**
      * 
      */
     getTitles() {
-        let titles = this.titleService
-            .getTitles();
-        this.title = titles[0];
+        this.titleService
+            .getTitles()
+            .subscribe(
+                titles => {
+                    this.titles = titles;
+                    console.log(titles);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.log(this.errorMessage);
+                });
     }
 
     /**

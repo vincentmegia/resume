@@ -11,19 +11,27 @@ import { EducationService } from './education.service';
 
 export class EducationComponent implements OnInit {
     educations: Array<Education>;
+    errorMessage: string;
 
-    constructor(private educationService: EducationService) { }
+    constructor(private educationService: EducationService) {
+        this.educations = new Array<Education>();
+    }
 
     /**
      * Retrieves the educations data
      */
     getEducations() {
-        this.educations = this.educationService
-            .getEducations();
-        //    .then(educations => this.educations = educations)
-        //    .catch(error => console.log(error));
-        //console.log(this.educations);
-        //console.log("educations retrieve completed.");
+        this.educationService
+            .getEducations()
+            .subscribe(
+                educations => {
+                    this.educations = educations;
+                    console.log(educations[0]);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.log(this.errorMessage);
+                });
     }
 
     /**

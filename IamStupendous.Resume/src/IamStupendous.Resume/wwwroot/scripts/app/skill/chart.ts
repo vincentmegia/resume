@@ -2,17 +2,17 @@
  * Chart model class
  */
 export class Chart {
-    labels: string[];
-    data: number[];
+    labels: Array<string>;
+    data: Array<number>;
     type: string;
     options: any;
-    colors: any[];
+    colors: Array<any>;
 
-    constructor(labels: string[],
-                data: number[],
+    constructor(labels: Array<string>,
+                data: Array<number>,
                 type: string,
                 options: any,
-                colors: any[]) {
+                colors: Array<any>) {
         this.labels = labels;
         this.data = data;
         this.type = type;

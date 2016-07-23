@@ -16,16 +16,28 @@ import { WorkService } from './work.service';
 
 
 export class WorkComponent {
-    works: Work[];
+    works: Array<Work>;
+    errorMessage: string;
 
-    constructor(private workService: WorkService) { }
+    constructor(private workService: WorkService) {
+        this.works = new Array<Work>();
+    }
 
     /**
      * 
      */
     getWorks() {
-        this.works = this.workService
-            .getWorks();
+        this.workService
+            .getWorks()
+            .subscribe(
+                works => {
+                    this.works = works;
+                    console.log(works);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.log(this.errorMessage);
+                });
     }
 
     ngOnInit() {

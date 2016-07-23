@@ -11,6 +11,7 @@ import { SummaryService } from './summary.service';
 
 export class SummaryComponent implements OnInit {
     summaries: Array<Summary>;
+    errorMessage: string;
 
     constructor(private summaryService: SummaryService) { }
 
@@ -18,8 +19,17 @@ export class SummaryComponent implements OnInit {
      * 
      */
     getSummaries() {
-        this.summaries = this.summaryService
-            .getSummaries();
+        this.summaryService
+            .getSummaries()
+            .subscribe(
+                summaries => {
+                    this.summaries = summaries;
+                    console.log(summaries);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.log(this.errorMessage);
+                });
     }
 
     /**
