@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class SkillService {
 
-    private endPoint = 'api/resume';
+    private endPoint = 'api/resume/skills';
 
     constructor(private http: Http) { }
 
@@ -26,9 +26,9 @@ export class SkillService {
     private deserialize(response: Response) {
         let payload = response.json();
         let skills = new Array<Skill>();
-        for (let skill of payload.skills) {
-            let item = Skill.create(skill);
-            skills.push(item);
+        for (let item of payload) {
+            let skill = Skill.create(item);
+            skills.push(skill);
         }
         return skills;
     }

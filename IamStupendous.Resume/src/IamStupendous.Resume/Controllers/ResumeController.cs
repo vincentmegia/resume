@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Linq;
+using IamStupendous.Resume.Models;
 using IamStupendous.Resume.Services;
 using IamStupendous.Resume.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +31,85 @@ namespace IamStupendous.Resume.Controllers
         }
 
         /// <summary>
-        /// GET: api/home
+        /// GET: api/resume/works
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("works")]
+        public IList<Work> GetWorks()
+        {
+            return _workService
+                .GetWorks();
+        }
+
+        /// <summary>
+        /// GET: api/resume/educations
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("educations")]
+        public IList<Education> GetEducations()
+        {
+            return _educationService
+                .GetEducations();
+        }
+
+        /// <summary>
+        /// GET: api/resume/skill
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("skills")]
+        public IList<Skill> GetSkills()
+        {
+            return _skillService
+                .GetSkills();
+        }
+
+        /// <summary>
+        /// GET: api/resume/summaries
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("summaries")]
+        public IList<Summary> GetSummaries()
+        {
+            return _summaryService
+                .GetSummaries();
+        }
+
+        /// <summary>
+        /// GET: api/resume/titles
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("titles")]
+        public IList<Title> GetTitles()
+        {
+            return _titleService
+                .GetTitle();
+        }
+
+        /// <summary>
+        /// GET: api/resume/menu-items
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("menu-items")]
+        public IList<MenuItem> GetMenuItems()
+        {
+            return new List<MenuItem>
+            {
+                new MenuItem("Summary Experience", "#summary-experience", "fa fa-user"),
+                new MenuItem("Education", "#education", "fa fa-book"),
+                new MenuItem("Work", "#work", "fa fa-briefcase"),
+                new MenuItem("Skills", "#skills", "fa fa-code"),
+                new MenuItem("Contact", "#contact", "fa fa-envelope")
+            };
+        }
+
+        /// <summary>
+        /// GET: api/resume
         /// </summary>
         /// <returns></returns>
         [HttpGet]

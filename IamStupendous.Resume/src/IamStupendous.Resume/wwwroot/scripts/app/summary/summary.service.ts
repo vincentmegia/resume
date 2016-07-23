@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class SummaryService {
 
-    private endPoint = 'api/resume';
+    private endPoint = 'api/resume/summaries';
 
     constructor(private http: Http) { }
 
@@ -26,9 +26,9 @@ export class SummaryService {
     private deserialize(response: Response) {
         let payload = response.json();
         let summaries= new Array<Summary>();
-        for (let summary of payload.summaries) {
-            let item = Summary.create(summary);
-            summaries.push(item);
+        for (let item of payload) {
+            let summary = Summary.create(item);
+            summaries.push(summary);
         }
         return summaries;
     }
