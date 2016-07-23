@@ -21,10 +21,12 @@ import { MenuItem } from './menu-item';
 })
 
 export class HeaderComponent implements OnInit {
-    menuItems: Array<MenuItem> = [];
+    menuItems: Array<MenuItem>;
     errorMessage: string;
 
-    constructor(private headerService: HeaderService) { }
+    constructor(private headerService: HeaderService) {
+        this.menuItems = new Array<MenuItem>();
+    }
 
     /**
      * 

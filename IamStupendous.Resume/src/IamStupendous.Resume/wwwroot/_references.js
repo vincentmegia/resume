@@ -923,7 +923,6 @@
 /// <reference path="libraries/@angular/upgrade/upgrade.js" />
 /// <reference path="libraries/angular2-in-memory-web-api/http-status-codes.js" />
 /// <reference path="libraries/angular2-in-memory-web-api/index.js" />
-/// <reference path="libraries/angular2-in-memory-web-api/in-memory-backend.service.js" />
 /// <reference path="libraries/babel-runtime/core-js/array/concat.js" />
 /// <reference path="libraries/babel-runtime/core-js/array/copy-within.js" />
 /// <reference path="libraries/babel-runtime/core-js/array/entries.js" />

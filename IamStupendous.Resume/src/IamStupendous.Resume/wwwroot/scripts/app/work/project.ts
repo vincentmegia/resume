@@ -6,13 +6,13 @@ import { Role } from './role';
 export class Project {
     title: string;
     description: string;
-    roles: Role[];
+    roles: Array<Role>;
     technologies: string;
     isOpen: boolean;
 
     constructor(title: string,
                 description: string,
-                roles: Role[],
+                roles: Array<Role>,
                 technologies: string) {
         this.title = title;
         this.description = description;

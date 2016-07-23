@@ -3,10 +3,10 @@
  */
 export class Role {
     title: string;
-    responsibilities: string[];
+    responsibilities: Array<string>;
 
     constructor(title: string,
-                responsibilities: string[]) {
+        responsibilities: Array<string>) {
         this.title = title;
         this.responsibilities = responsibilities;
     }

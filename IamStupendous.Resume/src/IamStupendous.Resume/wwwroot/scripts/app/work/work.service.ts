@@ -25,7 +25,7 @@ export class WorkService {
      */
     private deserialize(response: Response) {
         let payload = response.json();
-        let works: Array<Work> = [];
+        let works = new Array<Work>();
         for (let work of payload.works) {
             let item = Work.create(work);
             works.push(item);

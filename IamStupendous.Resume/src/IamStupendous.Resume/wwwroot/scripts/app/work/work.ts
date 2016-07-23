@@ -5,7 +5,7 @@ import { Project } from './project'
  */
 export class Work {
     company: string;
-    projects: Project[];
+    projects: Array<Project>;
     yearStart: string;
     yearEnd: string;
     isOpen: boolean;
@@ -13,7 +13,7 @@ export class Work {
     constructor(company: string,
                 yearStart: string,
                 yearEnd: string,
-                projects: Project[]) {
+                projects: Array<Project>) {
         this.company = company;
         this.yearStart = yearStart;
         this.yearEnd = yearEnd;

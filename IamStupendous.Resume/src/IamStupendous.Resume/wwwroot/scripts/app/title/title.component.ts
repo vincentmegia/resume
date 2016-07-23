@@ -9,11 +9,11 @@ import { TitleService } from './title.service';
 })
 
 export class TitleComponent implements OnInit {
-    title: Title;
+    titles: Array<Title>;
     errorMessage: string;
 
     constructor(private titleService: TitleService) {
-        this.title = new Title(null, null, null); //need to fix where view is rendering first before data retrieval is complete
+        this.titles = new Array<Title>();
     }
 
     /**
@@ -24,7 +24,7 @@ export class TitleComponent implements OnInit {
             .getTitles()
             .subscribe(
                 titles => {
-                    this.title = titles[0];
+                    this.titles = titles;
                     console.log(titles);
                 },
                 error => {

@@ -25,7 +25,7 @@ export class SummaryService {
      */
     private deserialize(response: Response) {
         let payload = response.json();
-        let summaries: Array<Summary> = [];
+        let summaries= new Array<Summary>();
         for (let summary of payload.summaries) {
             let item = Summary.create(summary);
             summaries.push(item);

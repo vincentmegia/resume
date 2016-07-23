@@ -10,10 +10,12 @@ import { EducationService } from './education.service';
 })
 
 export class EducationComponent implements OnInit {
-    educations: Array<Education> = [];
+    educations: Array<Education>;
     errorMessage: string;
 
-    constructor(private educationService: EducationService) { }
+    constructor(private educationService: EducationService) {
+        this.educations = new Array<Education>();
+    }
 
     /**
      * Retrieves the educations data

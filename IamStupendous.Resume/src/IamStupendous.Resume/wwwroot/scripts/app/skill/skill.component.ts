@@ -18,14 +18,16 @@ export class SkillComponent implements OnInit {
     charts: Array<Chart>;
     errorMessage: string;
 
-    constructor(private skillService: SkillService) { }
+    constructor(private skillService: SkillService) {
+        this.charts = Array<Chart>();
+    }
 
     /**
      * Skills arrays
      * @param skills
      */
-    generateCharts(skills: Skill[]) {
-        let charts: Chart[] = [];
+    generateCharts(skills: Array<Skill>) {
+        let charts = new Array<Chart>();
         for (let skill of skills) {
             charts.push(
                 new Chart(

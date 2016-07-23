@@ -25,7 +25,7 @@ export class HeaderService {
      */
     private deserialize(response: Response) {
         let payload = response.json();
-        let menuItems: Array<MenuItem> = [];
+        let menuItems = new Array<MenuItem>();
         for (let menuItem of payload.menuItems) {
             let item = MenuItem.create(menuItem);
             menuItems.push(item);

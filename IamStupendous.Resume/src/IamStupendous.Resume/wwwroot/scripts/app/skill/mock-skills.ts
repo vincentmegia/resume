@@ -1,6 +1,6 @@
 import { Skill } from './skill';
 
-export var SKILLS: Skill[] = [
+export var SKILLS: Array<Skill> = [
     new Skill('C#', 90),
     new Skill('Asp.Net MVC', 70),
     new Skill('WCF', 70),

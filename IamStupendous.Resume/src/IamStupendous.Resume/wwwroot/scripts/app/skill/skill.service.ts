@@ -25,7 +25,7 @@ export class SkillService {
      */
     private deserialize(response: Response) {
         let payload = response.json();
-        let skills: Array<Skill> = [];
+        let skills = new Array<Skill>();
         for (let skill of payload.skills) {
             let item = Skill.create(skill);
             skills.push(item);

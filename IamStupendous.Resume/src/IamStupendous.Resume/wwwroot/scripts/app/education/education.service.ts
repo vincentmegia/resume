@@ -25,7 +25,7 @@ export class EducationService {
      */
     private deserialize(response: Response) {
         let payload = response.json();
-        let educations: Array<Education> = [];
+        let educations = new Array<Education>();
         for (let education of payload.educations) {
             let item = Education.create(education);
             educations.push(item);
