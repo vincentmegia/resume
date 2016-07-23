@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class WorkService {
 
-    private endPoint = 'api/resume';
+    private endPoint = 'api/resume/works';
 
     constructor(private http: Http) { }
 
@@ -26,9 +26,9 @@ export class WorkService {
     private deserialize(response: Response) {
         let payload = response.json();
         let works = new Array<Work>();
-        for (let work of payload.works) {
-            let item = Work.create(work);
-            works.push(item);
+        for (let item of payload) {
+            let work = Work.create(item);
+            works.push(work);
         }
         return works;
     }

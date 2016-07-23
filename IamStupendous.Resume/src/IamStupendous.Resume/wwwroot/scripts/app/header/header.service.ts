@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class HeaderService {
 
-    private endPoint = 'api/resume';
+    private endPoint = 'api/resume/menu-items';
 
     constructor(private http: Http) {}
 
@@ -26,9 +26,9 @@ export class HeaderService {
     private deserialize(response: Response) {
         let payload = response.json();
         let menuItems = new Array<MenuItem>();
-        for (let menuItem of payload.menuItems) {
-            let item = MenuItem.create(menuItem);
-            menuItems.push(item);
+        for (let item of payload) {
+            let menuItem = MenuItem.create(item);
+            menuItems.push(menuItem);
         }
         return menuItems;
     }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class EducationService {
 
-    private endPoint = 'api/resume';
+    private endPoint = 'api/resume/educations';
 
     constructor(private http: Http) { }
 
@@ -26,9 +26,9 @@ export class EducationService {
     private deserialize(response: Response) {
         let payload = response.json();
         let educations = new Array<Education>();
-        for (let education of payload.educations) {
-            let item = Education.create(education);
-            educations.push(item);
+        for (let item of payload) {
+            let education = Education.create(item);
+            educations.push(education);
         }
         return educations;
     }
