@@ -8,9 +8,10 @@
             <accordion>
                 <accordion-group [panelClass]="panel-primary"
                                  *ngFor="let work of works">
-                    <div accordion-heading 
+                    <div accordion-heading
                          (click)="work.isOpen = !work.isOpen">
-                        {{work.company + ' (' + (work.yearStart | date:'MMM-yyyy') + '-' + (work.yearEnd | date:'MMM-yyyy') + ')'}}
+                        <div *ngIf="work.yearEnd !== undefined">{{work.company + ' (' + (work.yearStart | date:'MMM-yyyy') + '-' + (work.yearEnd | date:'MMM-yyyy') + ')'}}</div>
+                        <div *ngIf="work.yearEnd === undefined">{{work.company + ' (' + (work.yearStart | date:'MMM-yyyy') + '- Present)'}}</div>
                         <i class="pull-right glyphicon"
                            [ngClass]="{'glyphicon-chevron-down': work?.isOpen, 'glyphicon-chevron-right': !work?.isOpen}"></i>
                     </div>
