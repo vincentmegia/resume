@@ -7,10 +7,11 @@ export class Skill {
     unknown: number;
 
     constructor(name: string,
-                expertise: number) {
+                expertise: number,
+                unknown: number) {
         this.name = name;
         this.expertise = expertise;
-        this.unknown = 100 - this.expertise;
+        this.unknown = unknown;
     }
 
     /**
