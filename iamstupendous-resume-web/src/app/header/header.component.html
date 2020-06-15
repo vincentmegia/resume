@@ -1,0 +1,23 @@
+<div id="section-topbar">
+    <div id="topbar-inner">
+        <div class="container">
+            <div class="row">
+                <div class="dropdown">
+                    <ul id="nav" class="nav">
+                        <li class="menu-item"
+                            *ngFor="let menuItem of menuItems">
+                            <a class="smoothScroll" [href]="menuItem.id">
+                                <i menuState="menuItem.state"
+                                   (click)="toggle(menuItem)"
+                                   [ngClass]="menuItem.icon"></i>
+                                   {{menuItem.text}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

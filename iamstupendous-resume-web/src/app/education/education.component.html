@@ -1,0 +1,23 @@
+<section id="education" name="education"></section>
+<!--EDUCATION DESCRIPTION -->
+<div class="container desc">
+    <div class="row">
+        <div class="col-lg-2 col-lg-offset-1">
+            <h5><i class="fa fa-book"></i> EDUCATION</h5>
+        </div>
+        <div class="col-lg-6">
+            <p>
+                <i>{{ educations[0]?.degree }}</i><br/>
+                {{ educations[0]?.school }}<br/>
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <p>
+                <i>{{ educations[0]?.yearStart | date:'MMM-yyyy'}} - {{ educations[0]?.yearEnd | date:'MMM-yyyy'}}</i>
+            </p>
+        </div>
+
+    </div><!--/.row -->
+    <br>
+    <hr>
+</div><!--/.container -->
