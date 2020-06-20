@@ -14,13 +14,15 @@ namespace IamStupendous.Resume.Repositories
             return new List<Summary>
             {
                 new Summary(
-                    "Over 13+ years of solid software development experience in building highly complex enterprise applications in areas such as multi layered web development using C# or Java, windows development by windows forms or WCF, back-end services based on SOA principles, report generation and data transformation layer (ETL) using Informatica and ULLink."),
+                    "17+ years experience in total information technology experience. "),
                 new Summary(
-                    "Over 7+ years of experience working in multi-national financial investment banking giants such as Barclays and Credit Suisse where teams collaboratively work across regions to delivering high quality enterprise applications catered for demanding business in short amount time and high pressure environment."),
+                    "10+ years experience in Fullstack software development using Java and Spring for server side, HTML, Bootstrap, Angular thru Typescript for UI, webpack and npm for deployment and dependency management. Writes web unit test cases using Selenium if time permits. Spends a lot of time producing clean code and good in designing prototype layouts."),
                 new Summary(
-                    "Good working experience with sophisticated investment platform such as Charles River and Charles River Anywhere."),
+                    "5+ years experience in enterprise development using WPF for front end and WCF as rest service. Great understanding of enterprise bus messaging and good in writing re-usable clean code."),
                 new Summary(
-                    "A highly motivated individual who is constantly learning, able to work to tight deadlines, and who can communicate effectively with technical peers as well as business users. Someone who promotes an environment of learning and the sharing of ideas and is always open looking for new challenges.")
+                    "1+ year experience writing micro services using Python and Flask and repository management using GIT and Docker."),
+                new Summary("12+ years experience working for multinational banks, implementing a range of technologies from enterprise/service-oriented architecture, to supporting legacy proprietary trading systems. Strong domain knowledge in Equities, and has a good understanding of investment management platforms such as Charles River."),
+                new Summary("Worked for Barclays from 2009 in Wealth Management department on a number of streams in project focused around buy side product Charles River IMST. Three of the big streams would be  Charles River Enhanced Workflow, Avaloq Vestima Funds Onboarding by STP and Charles River Anywhere Re-Write.")
             };
         }
     }

@@ -48,6 +48,7 @@ export class SkillComponent implements OnInit {
                     },
                     [
                         // { backgroundColor: ["#1abc9c", "#ecf0f1"] }
+                        { backgroundColor: ["grey", "#ecf0f1"] }
                     ]));
         }
         return charts;
