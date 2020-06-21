@@ -8,12 +8,12 @@
                 <accordion [isAnimated]="true">
                     <accordion-group *ngFor="let work of works">
                         <div accordion-heading (click)="work.isOpen = !work.isOpen">
-                            <i *ngIf="work.yearEnd !== undefined">{{work.company + ' (' + (work.yearStart | date:'MMM-yyyy') + '-' + (work.yearEnd | date:'MMM-yyyy') + ')'}}</i>
-                            <i *ngIf="work.yearEnd === null">{{work.company + ' (' + (work.yearStart | date:'MMM-yyyy') + '- Present)'}}</i>
+                            <span *ngIf="work.yearEnd !== undefined">{{work.company + ' (' + (work.yearStart | date:'MMM-yyyy') + '-' + (work.yearEnd | date:'MMM-yyyy') + ')'}}</span>
+                            <span *ngIf="work.yearEnd === null">{{work.company + ' (' + (work.yearStart | date:'MMM-yyyy') + '- Present)'}}</span>
                             <div class="pull-right glyphicon"
                             [ngClass]="{'glyphicon-chevron-down': work?.isOpen, 'glyphicon-chevron-right': !work?.isOpen}"></div>
                         </div>
-                        <i>PROJECT(S)</i>
+                        <p><i class="fa fa-folder-open" aria-hidden="true"></i> PROJECT(S)</p>
                         <accordion-group *ngFor="let project of work.projects">
                             <div accordion-heading (click)="project.isOpen = !project.isOpen">
                                 {{project.title}}
