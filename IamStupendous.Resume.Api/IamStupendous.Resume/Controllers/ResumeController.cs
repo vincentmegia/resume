@@ -1,13 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
 using IamStupendous.Resume.Models;
 using IamStupendous.Resume.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IamStupendous.Resume.Controllers
 {
-    // [Produces("application/json")]
-    // [Route("api/resume")]
     [ApiController]
     [Route("api/resume")]
     public class ResumeController : Controller
@@ -31,12 +28,16 @@ namespace IamStupendous.Resume.Controllers
             _titleService = titleService;
         }
 
+        [HttpGet("/")]
+        public string Index()
+        {
+            return "ok";
+        }
         /// <summary>
         /// GET: api/resume/works
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("works")]
+        [HttpGet("works")]
         public IList<Work> GetWorks()
         {
             return _workService
@@ -47,8 +48,7 @@ namespace IamStupendous.Resume.Controllers
         /// GET: api/resume/educations
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("educations")]
+        [HttpGet("educations")]
         public IList<Education> GetEducations()
         {
             return _educationService
@@ -59,8 +59,7 @@ namespace IamStupendous.Resume.Controllers
         /// GET: api/resume/skill
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("skills")]
+        [HttpGet("skills")]
         public IList<Skill> GetSkills()
         {
             return _skillService
@@ -71,8 +70,7 @@ namespace IamStupendous.Resume.Controllers
         /// GET: api/resume/summaries
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("summaries")]
+        [HttpGet("summaries")]
         public IList<Summary> GetSummaries()
         {
             return _summaryService
@@ -83,8 +81,7 @@ namespace IamStupendous.Resume.Controllers
         /// GET: api/resume/titles
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("titles")]
+        [HttpGet("titles")]
         public IList<Title> GetTitles()
         {
             return _titleService
@@ -95,8 +92,7 @@ namespace IamStupendous.Resume.Controllers
         /// GET: api/resume/menu-items
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("menu-items")]
+        [HttpGet("menu-items")]
         public IList<MenuItem> GetMenuItems()
         {
             return new List<MenuItem>

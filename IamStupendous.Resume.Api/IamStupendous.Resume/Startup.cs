@@ -1,4 +1,5 @@
-﻿using IamStupendous.Resume.Repositories;
+﻿using System.Linq;
+using IamStupendous.Resume.Repositories;
 using IamStupendous.Resume.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,11 +21,6 @@ namespace IamStupendous.Resume
 
             if (env.IsDevelopment())
             {
-                // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                //builder.AddUserSecrets();
-
-                // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
-                //builder.AddApplicationInsightsSettings(developerMode: true);
             }
 
             builder.AddEnvironmentVariables();
@@ -36,18 +32,6 @@ namespace IamStupendous.Resume
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            // services.AddApplicationInsightsTelemetry(Configuration);
-            // services
-            //     .AddMvc(options =>
-            //     {
-            //         var formatter = new JsonOutputFormatter
-            //         {
-            //             SerializerSettings = {ContractResolver = new CamelCasePropertyNamesContractResolver()}
-            //         };
-            //         options.OutputFormatters.Insert(0, formatter);
-            //     });
-
             // Add application services.
             services.AddAuthorization();
             services.AddControllers();
@@ -61,21 +45,20 @@ namespace IamStupendous.Resume
             services.AddSingleton<ISkillRepository, SkillRepository>();
             services.AddSingleton<ISummaryRepository, SummaryRepository>();
             services.AddSingleton<ITitleRepository, TitleRepository>();
+            var urls = Configuration
+                .GetSection("Cors")
+                .GetChildren()
+                .Select(x => x.Value);
             services.AddCors(options => options.AddDefaultPolicy(
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200");
+                    builder.WithOrigins(urls.ToArray());
                 }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            // loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            // loggerFactory.AddDebug();
-            //
-            // app.UseApplicationInsightsRequestTelemetry();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -84,21 +67,7 @@ namespace IamStupendous.Resume
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            //app.UseApplicationInsightsExceptionTelemetry();
-
             app.UseStaticFiles();
-
-            //app.UseIdentity();
-
-            // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
-
-            // app.UseMvc(routes =>
-            // {
-            //     routes.MapRoute(
-            //         name: "default",
-            //         template: "{controller=Home}/{action=Index}/{id?}");
-            // });
             app.UseCors();
             app.UseHttpsRedirection();
             app.UseRouting();

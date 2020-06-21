@@ -2,30 +2,13 @@
 
 namespace IamStupendous.Resume.Controllers
 {
+    [ApiController]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        [HttpGet("status")]
+        public string Index()
         {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View();
+            return "home-ok";
         }
     }
 }
