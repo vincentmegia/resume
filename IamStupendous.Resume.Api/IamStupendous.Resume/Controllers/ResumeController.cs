@@ -37,7 +37,8 @@ namespace IamStupendous.Resume.Controllers
         /// GET: api/resume/works
         /// </summary>
         /// <returns></returns>
-        [HttpGet("works")]
+        [HttpGet]
+        [Route("works")]
         public IList<Work> GetWorks()
         {
             return _workService

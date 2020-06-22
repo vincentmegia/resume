@@ -3,11 +3,12 @@ import { Http, Response } from '@angular/http';
 import { Summary } from './summary';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators'
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class SummaryService {
 
-    private endPoint = 'https://localhost:5001/api/resume/summaries';
+    private endPoint = environment.apiEndpoint + 'summaries';
 
     constructor(private http: Http) { }
 

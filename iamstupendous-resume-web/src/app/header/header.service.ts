@@ -3,11 +3,12 @@ import { Http, Response } from '@angular/http';
 import { MenuItem  } from './menu-item';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class HeaderService {
 
-    private endPoint = 'https://localhost:5001/api/resume/menu-items';
+    private endPoint = environment.apiEndpoint + 'menu-items';
 
     constructor(private http: Http) {}
 

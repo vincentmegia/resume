@@ -3,12 +3,13 @@ import { Http, Response } from '@angular/http';
 import { Work } from './work';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class WorkService {
 
-    private endPoint = 'https://localhost:5001/api/resume/works';
-
+    private endPoint = environment.apiEndpoint + 'works';
+    
     constructor(private http: Http) { }
 
     /**

@@ -34,7 +34,6 @@ namespace IamStupendous.Resume
         {
             // Add application services.
             services.AddAuthorization();
-            services.AddControllers();
             services.AddSingleton<IEducationService, EducationService>();
             services.AddSingleton<ISkillService, SkillService>();
             services.AddSingleton<ISummaryService, SummaryService>();
@@ -49,11 +48,17 @@ namespace IamStupendous.Resume
                 .GetSection("Cors")
                 .GetChildren()
                 .Select(x => x.Value);
-            services.AddCors(options => options.AddDefaultPolicy(
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy",
                 builder =>
                 {
-                    builder.WithOrigins(urls.ToArray());
+                    builder
+                        .WithOrigins(urls.ToArray())
+                        .SetIsOriginAllowed((host) => true)
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
                 }));
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,16 +68,12 @@ namespace IamStupendous.Resume
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-            app.UseStaticFiles();
-            app.UseCors();
-            app.UseHttpsRedirection();
-            app.UseRouting();
-            app.UseAuthorization();
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseExceptionHandler("/Home/Error")
+                .UseCors("ApiCorsPolicy")
+                .UseHttpsRedirection()
+                .UseAuthorization()
+                .UseRouting()
+                .UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }

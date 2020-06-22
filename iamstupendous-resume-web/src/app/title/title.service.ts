@@ -3,11 +3,12 @@ import { Http, Response } from '@angular/http';
 import { Title } from './title';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class TitleService {
 
-    private endPoint = 'https://localhost:5001/api/resume/titles';
+    private endPoint = environment.apiEndpoint + 'titles';
 
     constructor(private http: Http) { }
 

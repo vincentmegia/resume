@@ -3,11 +3,12 @@ import { Http, Response } from '@angular/http';
 import { Skill } from './skill';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class SkillService {
 
-    private endPoint = 'https://localhost:5001/api/resume/skills';
+    private endPoint = environment.apiEndpoint + 'skills';
 
     constructor(private http: Http) { }
 

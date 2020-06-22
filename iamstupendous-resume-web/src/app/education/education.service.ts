@@ -3,11 +3,12 @@ import { Http, Response } from '@angular/http';
 import { Education } from './education';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class EducationService {
 
-    private endPoint = 'https://localhost:5001/api/resume/educations';
+    private endPoint = environment.apiEndpoint + 'educations';
 
     constructor(private http: Http) { }
 
