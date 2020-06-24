@@ -1,8 +1,10 @@
 ﻿using System.Linq;
+using System.Net;
 using IamStupendous.Resume.Repositories;
 using IamStupendous.Resume.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -58,6 +60,19 @@ namespace IamStupendous.Resume
                         .AllowAnyMethod()
                         .AllowCredentials();
                 }));
+            var trustedProxies = Configuration
+                .GetSection("TrustedProxyServers")
+                .GetChildren()
+                .Select(x => x.Value);
+            if (trustedProxies.Any())
+                services.Configure<ForwardedHeadersOptions>(options =>
+                {
+                    foreach (var trustedProxy in trustedProxies)
+                    {
+                        options.KnownProxies.Add(IPAddress.Parse(trustedProxy));    
+                    }
+                });
+            
             services.AddControllers();
         }
 
@@ -69,6 +84,8 @@ namespace IamStupendous.Resume
                 app.UseDeveloperExceptionPage();
             }
             app.UseExceptionHandler("/Home/Error")
+                .UseForwardedHeaders(new ForwardedHeadersOptions
+                    { ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto})
                 .UseCors("ApiCorsPolicy")
                 .UseHttpsRedirection()
                 .UseAuthorization()

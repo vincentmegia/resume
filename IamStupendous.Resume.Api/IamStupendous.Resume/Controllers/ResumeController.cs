@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace IamStupendous.Resume.Controllers
 {
     [ApiController]
-    [Route("api/resume")]
+    [Route("resume")]
     public class ResumeController : Controller
     {
         private readonly IWorkService _workService;
