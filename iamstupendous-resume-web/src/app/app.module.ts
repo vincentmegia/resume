@@ -14,6 +14,7 @@ import { SkillComponent } from './skill/skill.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignatureComponent } from './signature/signature.component';
 import { ChartsModule } from 'ng2-charts';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ChartsModule } from 'ng2-charts';
     BrowserAnimationsModule,
     HttpModule,
     AccordionModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
