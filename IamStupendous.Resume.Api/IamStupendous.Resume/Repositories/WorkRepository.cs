@@ -26,18 +26,18 @@ namespace IamStupendous.Resume.Repositories
                                 new Role("SENIOR SOFTWARE ENGINEER",
                                     new List<string>
                                     {
-                                        "Liaised with Business Analyst in translating functional specification to technical spefication",
+                                        "Liaised with Business Analyst in translating functional specification to technical specification",
                                         "Attended regular scrum call to discuss timeline of deliverables",
                                         "Developed ETL transformation layer using ULLink to convert Charles River FIX 4.4 messages to Swift XML specification.",
                                         "Developed Java component that transforms Swift XML to Swift banking protocol using Spring and WIFE libraries",
-                                        "Improved logging of Feeds gateway actors for production support and visibility written in C# and SpringNET",
+                                        "Improved logging of Feeds gateway actors for production support and visibility written in Java and Spring",
                                         "Attended regular meetings with testing team and supports Users Acceptance testing phase",
                                         "Maintained SIT and UAT environments",
                                         "Wrote automated unit test using NUnit",
                                         "Maintained Team City build configurations"
                                     })
                             },
-                            "C#, SpringNET, Java, Spring, Perforce, Teamcity, SQL Server, FIX 4.4 protocol., SWIFT protocol, ULLink, IBM Websphere MQ, JIRA"
+                            "Java, Spring, Perforce, Teamcity, SQL Server, FIX 4.4 protocol., SWIFT protocol, ULLink, IBM Websphere MQ, JIRA"
                             ),
                         new Project("CHARLES RIVER ANYWHERE RE-WRITE",
                             "Charles River Anyhwere is the web platform version of Charles River which primarily used by Private Bankers (PB) and Private Banking Executives (PBEs).The re-engineered platform is designed to be lightweight with stunning interface built according to the users most demanding requirements.",
@@ -49,14 +49,14 @@ namespace IamStupendous.Resume.Repositories
                                         "Attended daily scrum calls in UK time zone to capture and translate storyboards and use cases into technical requirements",
                                         "Closely worked with business in designing iterations of the user interface prototype",
                                         "Designed initial html user prototype",
-                                        "Designed and developed responsive web user interface using AngularJS and WebSockets",
+                                        "Designed and developed responsive web user interface using Angular and WebSockets",
                                         "Developed efficient and scalable back end system written in Java and Spring MVC while leveraging concurrency using AKKA",
                                         "Maintained SIT and UAT environments",
                                         "Wrote automated unit test for both front end and backend",
                                         "Maintained Team City build configurations"
                                     })
                             },
-                            "Java, Spring MVC AngularJS, AKKA framework, Perforce, WebSockets, Teamcity, SQL Server, JIRA"
+                            "Java, Spring MVC Angular, AKKA framework, Perforce, WebSockets, Teamcity, SQL Server, JIRA"
                             ),
                         new Project("CHARLES RIVER DATA FEEDS",
                             "Charles River Investment Management System is used heavily by wealth private bankers for its highly sophisticated portfolio management features, Dealers edge the competition by taking advantage of its complex order management execution features. Data feed pumped into Charles River is comprised of highly complex sequence of batches where securities, accounts, positions, currencies, exchanges and FXs data is derived from different source systems. Data undergoes several phase of intense processing of cleansing, filtering, munging, merging and finally canonicalization before pumped into Charles River.",
@@ -84,14 +84,14 @@ namespace IamStupendous.Resume.Repositories
                                     new List<string>
                                     {
                                         "Attended daily meeting to discuss requirements, resolve issues and mitigate possible exceptions",
-                                        "Designed and developed web reporting interface using C# and MVC 2.0 tailored to user requirements",
+                                        "Designed and developed web reporting interface using Java and Spring MVC tailored to user requirements",
                                         "Designed and developed quarterly, monthly, weekly and daily enterprise reports",
                                         "Redesigned existing report engine that generated 8k reports in 2hrs+ reduced to 10mins",
                                         "Wrote automated unit test",
                                         "Maintained SIT and UAT environment"
                                     })
                             },
-                            "ASP.NET MVC 2.0, C# (3.5) SQL Server 2005, Unity (IoC), Microsoft Enterprise Libraries, SVN, Crystal Report XI and Business Objects"
+                            "Java, Spring, SQL Server 2005, Unity (IoC), Microsoft Enterprise Libraries, SVN, Crystal Report XI and Business Objects"
                             ),
                         new Project("QUARTERLY PERFORMANCE MONITORING AND ELECTRONIC DISTRIBUTION ENGINE",
                             "QPM is a system that generates benchmark and performance reports for US based high net worth individuals. It takes data from an external company named AXYS where market data are already computed. EDE is a home brew ex- Lehman solution for email engine.Both projects are in BAU mode.",
@@ -105,7 +105,7 @@ namespace IamStupendous.Resume.Repositories
                                         "Engaged in level 3 or production support"
                                     })
                             },
-                            "ASP.NET 2.0, C# (3.5) SQL Server 2005, Informatica, Unix, Autosys"
+                            "Java, Spring MVC, SQL Server 2005, Informatica, Unix, Autosys"
                             )
                     }),
                 //TANGSPAC
@@ -125,14 +125,14 @@ namespace IamStupendous.Resume.Repositories
                                         "Produced functional requirement",
                                         "Produced technical requirement",
                                         "Designed and developed iterations of html user interface prototypes",
-                                        "Developed web user interface using C# and ASP.NET 2",
-                                        "Developed series of small and complex batch components written in C#, NHibernate, SpringNET to capture and process data from different source systems and stored on SQL Server 2005",
+                                        "Developed web user interface using Java and Spring",
+                                        "Developed series of small and complex batch components written in Java, Hibernate, Spring to capture and process data from different source systems and stored on SQL Server 2005",
                                         "Wrote automated unit test using NUnit",
                                         "Maintained SIT and UAT environment",
                                         "Engaged in level 3 or production support"
                                     })
                             },
-                            "ASP.NET 2.0, C# (3.5) SQL Server 2005, Perforce, NHibernate, SpringNET (IoC and AOP), NUnit"
+                            "Java, Spring MVC, SQL Server 2005, Perforce, Hibernate, JUnit"
                             )
                     }
                     ),
@@ -159,7 +159,7 @@ namespace IamStupendous.Resume.Repositories
                                         "In spare time develops tools that help support team to trouble production issues faster."
                                     })
                             },
-                            "C# (2.0) Sybase and Oracle, Clearcase, Beyond Compare, DB Artisan. Rapid SQL"
+                            "Java, Sybase and Oracle, Clearcase, Beyond Compare, DB Artisan. Rapid SQL"
                             ),
                         new Project("AGORA TRADE MONITORING TOOL",
                             "A trade-monitoring tool that connects and listen to a highly complex message based real time notification order management system to provide both traders and support team a centralized tool that can easily view positions and executions across different exchanges and multiple platforms.",

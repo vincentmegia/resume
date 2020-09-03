@@ -87,7 +87,7 @@ namespace IamStupendous.Resume
                 .UseForwardedHeaders(new ForwardedHeadersOptions
                     { ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto})
                 .UseCors("ApiCorsPolicy")
-                .UseHttpsRedirection()
+                //.UseHttpsRedirection()
                 .UseAuthorization()
                 .UseRouting()
                 .UseEndpoints(endpoints => { endpoints.MapControllers(); });
