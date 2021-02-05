@@ -14,9 +14,86 @@ namespace IamStupendous.Resume.Repositories
         {
             return new List<Work>
             {
-                new Work("BARCLAYS CAPITAL",
-                    new DateTime(2009, 1, 1),
+                new Work("Paypal",
+                    new DateTime(2020, 10, 26),
                     null,
+                    new List<Project>
+                    {
+                        new Project("QRCGATEWAY REST API",
+                            "QR Code(QRC) gateway API is an orchestration layer for all US PayPal QRC mobile scanning transactions. The initiative is to cut down the time spent by customers when transacting with merchants by scan to pay transactions.",
+                            new List<Role>
+                            {
+                                new Role("MTS 1 Software Engineer",
+                                    new List<String>
+                                    {
+                                        "Liase with Product Owner for requirements gathering activities",
+                                        "Develop high quality code",
+                                        "Document and perform unit and API E2E test"
+                                    }
+                                )
+                            },
+                            "Java, SpringBoot, Jenkins, Lombok, Docker containers"
+                        ),
+                        new Project("CFS CardLifecycle API",
+                            "CFS CardLicycle acts as the orchestration service for PayPal cards such as BDMC, PayPal Cash Card and PayPal Key. It also performs orchestration for Google, Apple and Andriod Pay",
+                            new List<Role>
+                            {
+                                new Role("MTS 1 Software Engineer",
+                                    new List<String>
+                                    {
+                                        "Liase with Product Owner for requirements gathering activities",
+                                        "Develop high quality code",
+                                        "Document and perform unit and API E2E test"
+                                    }
+                                )
+                            },
+                            "Java, SpringBoot, Jenkins, Lombok, Docker containers"
+                        ),
+                        new Project("CFS Unified Card Daemon",
+                            @"CFS Unified Cards is a backend event messaging consuming Daemon that process events and transactions, Simple events are processed and relayed to a notifications platform responsible for creating SMS, Email or Push notifications,
+                            Transaction messages is also processed and enriched before relayed to downstream api services.",
+                            new List<Role>
+                            {
+                                new Role("MTS 1 Software Engineer",
+                                    new List<String>
+                                    {
+                                        "Liase with Product Owner for requirements gathering activities",
+                                        "Develop high quality code",
+                                        "Document and perform unit and API E2E test"
+                                    }
+                                )
+                            },
+                            "Java, SpringBoot, Jenkins, Lombok, Docker containers"
+                        )
+                    }
+                ),
+                new Work("Sofgen",
+                    new DateTime(2016, 12, 01),
+                    new DateTime(2020, 10, 24),
+                    new List<Project>
+                    {
+                        new Project("CHARLES RIVER ORDER WORKFLOW COMPONENTS",
+                            "Charles River has a rich set of APIs that enables the business to implement highly tailored components to customize user experience and help design business aligned back end services.",
+                            new List<Role>
+                            {
+                                new Role("SENIOR SOFTWARE ENGINEER",
+                                    new List<String>
+                                    {
+                                        "Manages critical custom order workflow components written in .NET/C#  for Charles River IMST.",
+                                        "Developed/Tested/Delivered Custom Blotter Actions Send to Trading CBA – Productionized a convenient execution button that runs the order thru a series of business driven rule engine that checks the validity of an order before executing to liquidity provider.",
+                                        "Developed/Tested/Delivered Allocate CBA – Delivered an allocation button for manual execution trades, block trades that are received from liquidity providers are fed thru a gateway that creates the execution for the order.",
+                                        "Developed/Tested/Delivered Back 2 Back FX – Delivered WCF service that manages FX/FX Forwards for accounts having risk exposure to different currency.",
+                                        "Developed/Tested/Delivered Model Deviation – Delivered WCF service that detects if a given GIML accounts will go beyond the portfolio model before an order is created."
+                                    }
+                                )
+                            },
+                            "C#, Unity Container, Windows Forms, Windows Communication Foundation, Git, Teamcity, SQL Server, JIRA, Springnet"
+                        )
+                    }
+                ),
+                new Work("BARCLAYS CAPITAL",
+                    new DateTime(2009, 01, 01),
+                    new DateTime(2016, 12, 01),
                     new List<Project>
                     {
                         new Project("VESTIMA FUNDS ONBOARDING",
