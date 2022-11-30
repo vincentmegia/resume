@@ -6,17 +6,26 @@ import { Role } from "./role";
 export class Project {
 	title: string;
 	description: string;
+	description1?: string;
+	description2?: string;
+	description3?: string;
 	roles: Array<Role>;
 	technologies: string;
 
 	constructor(
 		title: string,
 		description: string,
+		description1: string,
+		description2: string,
+		description3: string,
 		roles: Array<Role>,
 		technologies: string
 	) {
 		this.title = title;
 		this.description = description;
+		this.description1 = description1
+		this.description2 = description2
+		this.description3 = description3
 		this.roles = roles;
 		this.technologies = technologies;
 	}

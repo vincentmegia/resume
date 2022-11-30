@@ -1,53 +1,59 @@
 <section id="skills" name="skills">
-    <div id="skillswrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-lg-offset-1">
-                    <h5><i class="fa fa-code"></i> SKILLS</h5>
-                </div>
-                <div class="col-lg-9">
-                    <p>10 - 100 (Highest)</p>
-                    <div class="row" *ngFor="let chart of charts; let i = index">
-                        <div *ngIf="i % 3 == 0">
-                            <div class="col-lg-4" *ngIf="charts.length - 1 >= i">
-                                <div class="chart">
-                                    <canvas baseChart
-                                            [data]="charts[i].data"
-                                            [labels]="charts[i].labels"
-                                            [chartType]="charts[i].type"
-                                            [options]="charts[i].options"
-                                            [colors]="charts[i].colors"></canvas>
-                                </div>
-                                <br />
-                            </div>
-                            <div class="col-lg-4" *ngIf="charts.length - 1 >= i + 1">
-                                <div class="chart">
-                                    <canvas baseChart
-                                            [data]="charts[i + 1].data"
-                                            [labels]="charts[i + 1].labels"
-                                            [chartType]="charts[i + 1].type"
-                                            [options]="charts[i + 1].options"
-                                            [colors]="charts[i + 1].colors"></canvas>
-                                </div>
-                                <br />
-                            </div>
-                            <div class="col-lg-4" *ngIf="charts.length - 1 >= i + 2">
-                                <div class="chart">
-                                    <canvas baseChart
-                                            [data]="charts[i + 2].data"
-                                            [labels]="charts[i + 2].labels"
-                                            [chartType]="charts[i + 2].type"
-                                            [options]="charts[i + 2].options"
-                                            [colors]="charts[i + 2].colors"></canvas>
-                                </div>
-                                <br />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <hr>
-        </div> 
-    </div>
+	<div id="skillswrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5><i class="fa fa-code"></i> SKILLS</h5>
+				</div>
+				<div class="col-lg-9">
+					<p>10 - 100 (Highest)</p>
+					<div class="row" *ngFor="let chart of charts; let i = index">
+						<div *ngIf="i % 3 == 0">
+							<div class="col-lg-4" *ngIf="charts.length - 1 >= i">
+								<div class="chart">
+									<canvas
+										baseChart
+										[data]="charts[i].data"
+										[labels]="charts[i].labels"
+										[chartType]="charts[i].type"
+										[options]="charts[i].options"
+										[colors]="charts[i].colors"
+									></canvas>
+								</div>
+								<br />
+							</div>
+							<div class="col-lg-4" *ngIf="charts.length - 1 >= i + 1">
+								<div class="chart">
+									<canvas
+										baseChart
+										[data]="charts[i + 1].data"
+										[labels]="charts[i + 1].labels"
+										[chartType]="charts[i + 1].type"
+										[options]="charts[i + 1].options"
+										[colors]="charts[i + 1].colors"
+									></canvas>
+								</div>
+								<br />
+							</div>
+							<div class="col-lg-4" *ngIf="charts.length - 1 >= i + 2">
+								<div class="chart">
+									<canvas
+										baseChart
+										[data]="charts[i + 2].data"
+										[labels]="charts[i + 2].labels"
+										[chartType]="charts[i + 2].type"
+										[options]="charts[i + 2].options"
+										[colors]="charts[i + 2].colors"
+									></canvas>
+								</div>
+								<br />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<hr />
+		</div>
+	</div>
 </section>
