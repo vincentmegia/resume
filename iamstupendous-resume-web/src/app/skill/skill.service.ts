@@ -23,110 +23,110 @@ export class SkillService {
 				name: "Java J2EE",
 				expertise: 90,
 			},
-			// {
-			// 	name: "Javascript",
-			// 	expertise: 80,
-			// },
-			// {
-			// 	name: "Spring Boot",
-			// 	expertise: 70,
-			// },
-			// {
-			// 	name: "Angular",
-			// 	expertise: 90,
-			// },
-			// {
-			// 	name: "Bootstrap",
-			// 	expertise: 80,
-			// },
-			// {
-			// 	name: "Nodejs",
-			// 	expertise: 60,
-			// },
-			// {
-			// 	name: "Deno",
-			// 	expertise: 50,
-			// },
-			// {
-			// 	name: "Webpack",
-			// 	expertise: 60,
-			// },
-			// {
-			// 	name: "WebSockets",
-			// 	expertise: 70,
-			// },
-			// {
-			// 	name: "GIT",
-			// 	expertise: 70,
-			// },
-			// {
-			// 	name: "Jenkins",
-			// 	expertise: 90,
-			// },
-			// {
-			// 	name: "Swagger",
-			// 	expertise: 50,
-			// },
-			// {
-			// 	name: "Docker",
-			// 	expertise: 70,
-			// },
-			// {
-			// 	name: "Maven",
-			// 	expertise: 80,
-			// },
-			// {
-			// 	name: "Autosys",
-			// 	expertise: 90,
-			// },
-			// {
-			// 	name: "Control-M",
-			// 	expertise: 90,
-			// },
-			// {
-			// 	name: "Crystal Reports",
-			// 	expertise: 90,
-			// },
-			// {
-			// 	name: "MS SQL Server Reporting Services",
-			// 	expertise: 90,
-			// },
-			// {
-			// 	name: "MS SQL Server",
-			// 	expertise: 90,
-			// },
-			// {
-			// 	name: "Oracle",
-			// 	expertise: 70,
-			// },
-			// {
-			// 	name: "CouchDb",
-			// 	expertise: 80,
-			// },
-			// {
-			// 	name: "Spring",
-			// 	expertise: 90,
-			// },
-			// {
-			// 	name: "AKKA",
-			// 	expertise: 70,
-			// },
-			// {
-			// 	name: "Hibernate",
-			// 	expertise: 60,
-			// },
-			// {
-			// 	name: "Apache Camel",
-			// 	expertise: 80,
-			// },
-			// {
-			// 	name: "RabbitMQ",
-			// 	expertise: 70,
-			// },
-			// {
-			// 	name: "IBM Websphere MQ",
-			// 	expertise: 70,
-			// },
+			{
+				name: "Javascript",
+				expertise: 80,
+			},
+			{
+				name: "Spring Boot",
+				expertise: 70,
+			},
+			{
+				name: "Angular",
+				expertise: 90,
+			},
+			{
+				name: "Bootstrap",
+				expertise: 80,
+			},
+			{
+				name: "Nodejs",
+				expertise: 60,
+			},
+			{
+				name: "Deno",
+				expertise: 50,
+			},
+			{
+				name: "Webpack",
+				expertise: 60,
+			},
+			{
+				name: "WebSockets",
+				expertise: 70,
+			},
+			{
+				name: "GIT",
+				expertise: 70,
+			},
+			{
+				name: "Jenkins",
+				expertise: 90,
+			},
+			{
+				name: "Swagger",
+				expertise: 50,
+			},
+			{
+				name: "Docker",
+				expertise: 70,
+			},
+			{
+				name: "Maven",
+				expertise: 80,
+			},
+			{
+				name: "Autosys",
+				expertise: 90,
+			},
+			{
+				name: "Control-M",
+				expertise: 90,
+			},
+			{
+				name: "Crystal Reports",
+				expertise: 90,
+			},
+			{
+				name: "MS SQL Server Reporting Services",
+				expertise: 90,
+			},
+			{
+				name: "MS SQL Server",
+				expertise: 90,
+			},
+			{
+				name: "Oracle",
+				expertise: 70,
+			},
+			{
+				name: "CouchDb",
+				expertise: 80,
+			},
+			{
+				name: "Spring",
+				expertise: 90,
+			},
+			{
+				name: "AKKA",
+				expertise: 70,
+			},
+			{
+				name: "Hibernate",
+				expertise: 60,
+			},
+			{
+				name: "Apache Camel",
+				expertise: 80,
+			},
+			{
+				name: "RabbitMQ",
+				expertise: 70,
+			},
+			{
+				name: "IBM Websphere MQ",
+				expertise: 70,
+			},
 		]);
 	}
 

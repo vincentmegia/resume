@@ -26,7 +26,7 @@ export class SkillComponent implements OnInit {
 			charts.push(
 				new Chart(
 					["Expertise", "Unknown"],
-					[skill.expertise, skill.unknown],
+					[skill.expertise, 100 - skill.expertise],
 					"doughnut",
 					{
 						responsive: false,
@@ -58,14 +58,10 @@ export class SkillComponent implements OnInit {
 		let skills: Array<Skill>;
 		this.skillService.getSkills().subscribe(
 			(items) => {
-				console.log("skills: ", items);
 				skills = items;
-				console.log(skills);
 				this.charts = this.generateCharts(skills);
-				console.log(this.charts);
 			},
 			(error) => {
-				console.log("skill error: ", error);
 				this.errorMessage = <any>error;
 				console.log(this.errorMessage);
 			}
