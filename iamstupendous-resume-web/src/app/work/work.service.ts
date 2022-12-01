@@ -20,7 +20,45 @@ export class WorkService {
 		//     .pipe(map(this.deserialize));
 		return of([
 			{
-				company: "Paypal",
+				company: "SINGTEL",
+				projects: [
+					{
+						title:
+							"heya powered by Singtel/Hi!App Singtel’s prepaid mobile app",
+						description:
+							"Mobile application and Website team lead in Singtel’s consumer prepaid applications. Empowers business to enable sim/esim card buy flow, topup services, prepaid plans and remittance services.",
+						description1: "Website: https://heya.sg",
+						description2:
+							"IOS: https://apps.apple.com/us/app/heya/id1599196726",
+						description3:
+							"ANDROID: https://play.google.com/store/apps/details?id=com.singtel.heya",
+						roles: [
+							{
+								title: "Front end squad lead/Team lead",
+								responsibilities: [
+									"Collaborate on a weekly basis with Product Owner, Design team, Senior architect and Backend leads on planning and execution of requirement and solution",
+									"Liaise with product owner and project manager for requirements and timeline",
+									"Implemented pro active mobile monitoring system that enables better production support.",
+									"Implemented modularisation in react-native applications that lowers cost.",
+									"Oversees planning, tasks and resource management for mobile front end team",
+									"Code critical requirements in react-native, Kotlin and Swift, ensures high quality code that meets business requirements",
+									"Enforce industry standard and ensure user journey adheres to Design team specification",
+									"Enforce industry CI/CD best practices",
+									"Support for SIT and UAT activities",
+									"Production support for incidents",
+								],
+							},
+						],
+						technologies:
+							"React-native, Swift, Java, Kotlin, Bamboo, Fastlane, Firebase, Google Analytics, Fullstory Analytics",
+					},
+				],
+				yearStart: "2020-10-26T00:00:00",
+				yearEnd: null,
+				isOpen: false,
+			},
+			{
+				company: "PAYPAL",
 				projects: [
 					{
 						title: "QRCGATEWAY REST API",
@@ -75,11 +113,11 @@ export class WorkService {
 					},
 				],
 				yearStart: "2020-10-26T00:00:00",
-				yearEnd: null,
+				yearEnd: "2021-02-26T00:00:00",
 				isOpen: false,
 			},
 			{
-				company: "Sofgen",
+				company: "SOFGEN",
 				projects: [
 					{
 						title: "CHARLES RIVER ORDER WORKFLOW COMPONENTS",
